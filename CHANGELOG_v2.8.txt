@@ -1,0 +1,11 @@
+mk_photo_mask V2.8 CHANGELOG
+
+- AI 錯誤訊息改為直接顯示於畫面，不再只寫入 console。
+- 啟動後自動檢查本機 HTTP 執行環境與必要 MediaPipe / FaceAPI 模型資源。
+- MediaPipe 發生錯誤時會自動清除狀態、重新初始化並重試一次。
+- MediaPipe 重試仍失敗時才切換 FaceAPI。
+- FaceAPI 優先 WebGL；WebGL 無法啟用時自動切換 CPU。
+- AI 結果會顯示實際引擎：MediaPipe Full、MediaPipe Short、FaceAPI WebGL 或 FaceAPI CPU。
+- start.bat 不再尋找舊中文 EXE，改為固定啟動本機 server.ps1，避免使用 file:// 直接開啟 index.html。
+- server.ps1 啟動時會檢查完整 AI 必要檔案，並只綁定 127.0.0.1。
+- 保留 V2.7 UI、多照片、AI 預設不遮蔽、手動多框、Ctrl/Cmd 拖曳複製、Delete/Backspace 刪除、局部 patch Undo 等功能。

@@ -1,0 +1,23 @@
+mk_photo_mask V2.13 Hotfix 1
+============================
+
+Fixes for advanced-ai-helper\prepare-bundled-runtime.cmd / .ps1:
+
+1. prepare-bundled-runtime.cmd
+   - Rewritten as ASCII-only Windows batch file.
+   - Uses CRLF line endings.
+   - Avoids Traditional Chinese / UTF-8 command parsing issues in cmd.exe.
+   - Preserves %~dp0 correctly even when the project path contains spaces.
+
+2. prepare-bundled-runtime.ps1
+   - Saved as UTF-8 with BOM + CRLF for Windows PowerShell 5.1 compatibility.
+   - Rewritten with balanced blocks and Windows PowerShell-compatible syntax.
+   - Automatically downloads Python 3.11.9 embeddable package from python.org when absent.
+   - Does NOT call ensurepip inside embedded Python (embeddable Python does not include ensurepip).
+   - Uses the build computer's Python 3.11 pip to install dlib-bin / NumPy / Pillow directly into the portable runtime.
+   - Verifies dlib, NumPy, and Pillow using the embedded runtime after installation.
+
+3. Runtime launch
+   - server.ps1 can start app\advanced_ai_runtime\python.exe automatically.
+   - The helper remains loopback-only on 127.0.0.1:8777.
+   - Main MediaPipe / FaceAPI workflow remains unaffected if dlib Lite is unavailable.

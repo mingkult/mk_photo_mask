@@ -1,0 +1,9 @@
+mk_photo_mask V4.3 GitHub Ready - Hotfix 3
+
+Fixes:
+1. Adds the portable MinGit and GitHub CLI directories to the current PowerShell PATH before gh auth login/setup-git.
+2. Fixes the case where GitHub authentication succeeds but gh cannot find git.exe and reports: unable to find git executable in PATH.
+3. Changes download order to curl first, then synchronous BITS, then PowerShell Invoke-WebRequest, avoiding the previous null BITS JobId warning.
+4. Verifies that git.exe is visible through PATH before starting GitHub authentication.
+
+No system-wide PATH change is made. The PATH adjustment applies only to the current publisher process.

@@ -1,0 +1,14 @@
+mk_photo_mask V3.0
+==================
+
+1. Version number updated from V2.0 to V3.0.
+2. No functional or UI behavior changes in this revision.
+3. Windows single-file build output is now mk_photo_mask_v3.0.exe.
+4. Existing MediaPipe / FaceAPI / dlib Lite and editing features are preserved.
+
+[V3.0 UI/Workflow update]
+- Combined AI face mask apply and manual mask apply into one button: 「套用目前選取遮罩」.
+- Manual selections can be applied while unselected AI face boxes remain visible.
+- Selected AI faces can be applied later with the same button; unselected AI boxes are preserved.
+- If manual selections and AI-selected faces both exist, the same action applies both and records one history step per photo.
+

@@ -1,0 +1,20 @@
+mk_photo_mask V3.0 Hotfix - Photo Upload / Unified Mask Apply
+=============================================================
+
+修正統一遮罩套用功能重構時，誤刪共用工具函式造成的照片上傳錯誤：
+- fileToCanvas is not defined
+
+同步恢復下列必要共用函式：
+- safeBaseName
+- canvasToBlob
+- fileToCanvas
+- clampFaceBoxForCanvas
+- refreshAiReviewSelections
+- applyMosaicToCanvas
+- applyBlurToCanvas
+
+保留 V3.0 新功能：
+- AI 與手動框可同時存在及操作
+- 單一「套用目前選取遮罩」按鈕
+- 只套用手動框時，未選取 AI 框繼續保留
+- AI / 手動同時選取時可一次套用

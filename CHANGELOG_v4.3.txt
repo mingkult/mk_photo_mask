@@ -1,0 +1,8 @@
+V4.3
+- Added end-to-end signed GitHub Release workflow for official tags.
+- Official v4.3 tags now require signing secrets and a valid code-signing certificate.
+- Added Code Signing EKU validation.
+- Added prepare-github-signing-secrets.ps1.
+- Added verify-github-release.ps1.
+- Added release asset re-download and SHA-256/AuthentiCode verification.
+- Added CODE_SIGNING_CHECKLIST.md.

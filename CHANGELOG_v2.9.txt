@@ -1,0 +1,9 @@
+mk_photo_mask V2.9 CHANGELOG
+
+- 研究並採用 Google 官方新版 MediaPipe Tasks Vision 1.0.1 作為可選的優先人臉偵測引擎。
+- 新增 update-ai-components.cmd / .ps1，可從官方 npm CDN 下載 Tasks Vision JS/WASM，並保存到 app/mediapipe-tasks。
+- 新版元件安裝後，偵測順序：MediaPipe Tasks Full -> MediaPipe Tasks Short -> Legacy MediaPipe Full/Short -> Browser FaceDetector -> FaceAPI。
+- 若新版元件未安裝或初始化失敗，會自動使用 V2.8 既有離線引擎，不影響基本功能。
+- 保留 AI_MAX_SIDE=1280、多圖、預設不遮蔽、手動多框、Ctrl/Cmd 複製、Delete/Backspace 刪除、局部 patch Undo。
+- server.ps1 新增 .mjs MIME 支援。
+- Windows build 預設版本更新為 2.9。

@@ -1,0 +1,10 @@
+mk_photo_mask V4.3
+
+正式 Windows 發布與 Code Signing 流程強化版。
+
+- 正式 v4.3 Tag 必須使用 Code Signing 憑證，未簽章版本禁止發布。
+- GitHub Actions 自動建立 Windows EXE、SHA-256、GitHub Release。
+- Release 建立後會重新下載正式資產，再次驗證 checksum 與 Authenticode。
+- 新增 Code Signing EKU / 私鑰 / 有效期限檢查。
+- 新增 GitHub Secrets 準備工具與發布後驗證工具。
+- 手動 workflow 仍可選擇產生未簽章測試 Artifact，但不會成為正式 Tag Release。

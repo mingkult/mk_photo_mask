@@ -1,0 +1,8 @@
+修改app這個資料夾的內容即可
+
+[V3.0 UI/Workflow update]
+- Combined AI face mask apply and manual mask apply into one button: 「套用目前選取遮罩」.
+- Manual selections can be applied while unselected AI face boxes remain visible.
+- Selected AI faces can be applied later with the same button; unselected AI boxes are preserved.
+- If manual selections and AI-selected faces both exist, the same action applies both and records one history step per photo.
+

@@ -1,0 +1,13 @@
+mk_photo_mask V4.2
+
+1. Canvas 記憶體管理改為動態保留：12 張以下保留目前前後 2 張，13 張以上只保留前後 1 張完整 Canvas。
+2. 第一張主照片也可在離屏時釋放 Canvas，修正 V4.1 主預覽 placeholder 未建立問題。
+3. 離屏照片自動精簡 Undo/Redo：最多保留近期 2 組、約 12 MB，降低大型照片長時間使用 RAM。
+4. 團體照 AI 改為大區塊＋小區塊雙尺度分區與較高重疊率。
+5. 分區辨識加入 FaceAPI 第二模型補抓，提升側臉、部分遮擋與極小臉候選召回。
+6. 工作專案 schema 升級 v4，新增「自動選較小」影像快照模式。
+7. 自動模式實際比較 PNG 與高畫質 WebP，逐張採用較小檔案。
+8. 儲存完成後顯示 WebP/PNG 實際採用張數。
+9. Windows build 新增 -RequireSigning，正式建置可強制簽章成功才通過。
+10. 新增 check-signing-readiness.ps1 與 release-guard.ps1。
+11. GitHub Tag 正式發布若未提供簽章秘密會直接失敗；手動測試建置仍可選擇未簽章。

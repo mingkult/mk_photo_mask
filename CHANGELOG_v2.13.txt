@@ -1,0 +1,23 @@
+mk_photo_mask V2.13 變更摘要
+============================
+
+1. 進階 AI 改為 dlib 精簡版（Lite HOG）
+   - 移除 face_recognition 大型模型依賴
+   - 只負責補抓主要 AI 可能漏掉的人臉
+   - 啟動更快、體積更適合本工具用途
+
+2. 新增「內建 dlib Lite runtime」架構
+   - 支援將 Python embeddable + dlib-bin + numpy + Pillow 預先包進 appdvanced_ai_runtime
+   - server.ps1 啟動時會優先嘗試啟動內建 runtime
+   - 若沒有內建 runtime，仍可改用 advanced_ai_helper.exe
+
+3. UI / 狀態訊息同步更新
+   - 「進階 AI 再掃描」說明改為 dlib Lite
+   - 畫面上明確顯示 dlib Lite 是否已就緒
+   - 缺少 helper 時，提示 prepare-bundled-runtime.cmd 的使用方式
+
+4. 不影響原本主要 AI 流程
+   - MediaPipe Tasks
+   - Legacy MediaPipe
+   - FaceAPI
+   - 以上主流程完全保留

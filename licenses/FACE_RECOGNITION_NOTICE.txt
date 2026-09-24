@@ -1,0 +1,8 @@
+Optional advanced AI component
+
+face_recognition by Adam Geitgey
+Repository: https://github.com/ageitgey/face_recognition
+License: MIT
+
+This project does not require face_recognition for its normal MediaPipe/FaceAPI workflow.
+When the optional advanced-ai-helper is installed/built, its Python environment or executable may also include dlib, face_recognition_models, NumPy and Pillow. Their respective licenses apply.

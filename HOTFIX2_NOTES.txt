@@ -1,0 +1,12 @@
+mk_photo_mask V4.3 GitHub Ready Hotfix 2
+
+Fixes the publisher appearing stuck while downloading Git:
+- Uses official MinGit ZIP instead of the larger full PortableGit package.
+- Shows live download percentage and transferred MB when BITS is available.
+- Falls back to curl.exe with a progress bar and retries.
+- Final fallback uses Invoke-WebRequest with visible progress.
+- Adds a 20-minute timeout for BITS downloads.
+- Reuses downloaded/extracted MinGit on subsequent runs.
+- Runs `gh auth setup-git` so portable MinGit can push over HTTPS after GitHub login.
+
+No administrator rights are required.

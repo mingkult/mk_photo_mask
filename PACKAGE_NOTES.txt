@@ -1,0 +1,3 @@
+V4.3: dynamic Canvas retention (active +/-1~2), main-canvas parking, aggressive parked-photo Undo/Redo trimming, dual-scale group-photo tiling with FaceAPI second-model supplementation, per-snapshot PNG/WebP auto-size selection, and guarded signed-release workflow. Keeps all V4.1 offline AI/manual masking, batch management, recovery backup, .mkpm projects, Undo/Redo, cancellable operations, and Windows signing support. Current display/build version is 4.3.
+
+V4.3: end-to-end signed GitHub Release workflow, signing secret preparation, Code Signing EKU validation, and published asset re-verification.

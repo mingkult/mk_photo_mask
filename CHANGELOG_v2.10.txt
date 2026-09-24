@@ -1,0 +1,11 @@
+mk_photo_mask V2.10 CHANGELOG
+
+1. AI 自動辨識人臉框新增可編輯互動。
+2. 單擊 AI 人臉框仍可切換「不遮蔽／將遮蔽」，並同步成為目前選取框。
+3. 可直接拖曳 AI 人臉框移動位置。
+4. Ctrl（Mac 為 Cmd）+ 拖曳 AI 人臉框可複製一份；複製框會保留原框的遮蔽勾選狀態。
+5. 選取 AI 人臉框後可按 Delete / Backspace 刪除該框。
+6. 第 2 張以後的多圖預覽同樣支援 AI 框移動、複製與刪除。
+7. 使用者手動調整 AI 框後，不會因遮罩形狀或 Padding UI 更新而被自動偵測結果覆寫。
+8. 保留 V2.9 MediaPipe Tasks Vision / Legacy MediaPipe / FaceAPI fallback，以及 V2.7 起的手動多框功能。
+9. Windows build 預設版本更新為 2.10。

@@ -1,0 +1,4 @@
+dlib-bin>=20.0.0
+numpy>=1.26,<2
+Pillow>=10
+

@@ -1,0 +1,2 @@
+This project can optionally use dlib via a local helper for face detection only.
+Please review dlib and bundled package licenses before redistribution.

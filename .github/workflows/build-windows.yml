@@ -1,0 +1,143 @@
+name: Build and Release Windows EXE
+
+on:
+  workflow_dispatch:
+    inputs:
+      allow_unsigned:
+        description: 'Allow unsigned artifact for manual test builds'
+        required: true
+        type: boolean
+        default: true
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    env:
+      APP_VERSION: '4.3'
+      EXE_NAME: 'mk_photo_mask_v4.3.exe'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate release tag
+        shell: powershell
+        run: |
+          $isTagRelease = $env:GITHUB_REF -like 'refs/tags/v*'
+          if ($isTagRelease) {
+            $tagVersion = $env:GITHUB_REF -replace '^refs/tags/v', ''
+            if ($tagVersion -ne $env:APP_VERSION) {
+              throw "Tag version $tagVersion does not match this source release ($env:APP_VERSION)."
+            }
+          }
+
+      - name: Prepare signing certificate
+        if: ${{ secrets.MK_SIGN_PFX_BASE64 != '' }}
+        shell: powershell
+        env:
+          MK_SIGN_PFX_BASE64: ${{ secrets.MK_SIGN_PFX_BASE64 }}
+          MK_SIGN_PFX_PASSWORD: ${{ secrets.MK_SIGN_PFX_PASSWORD }}
+        run: |
+          if ([string]::IsNullOrWhiteSpace($env:MK_SIGN_PFX_PASSWORD)) {
+            throw 'MK_SIGN_PFX_PASSWORD is missing.'
+          }
+          [IO.File]::WriteAllBytes('signing.pfx', [Convert]::FromBase64String($env:MK_SIGN_PFX_BASE64))
+          .\check-signing-readiness.ps1 -PfxPath '.\signing.pfx' -PfxPassword $env:MK_SIGN_PFX_PASSWORD -RequireCodeSigningEku
+
+      - name: Build Windows EXE
+        shell: powershell
+        env:
+          MK_SIGN_PFX_BASE64: ${{ secrets.MK_SIGN_PFX_BASE64 }}
+          MK_SIGN_PFX_PASSWORD: ${{ secrets.MK_SIGN_PFX_PASSWORD }}
+          ALLOW_UNSIGNED: ${{ inputs.allow_unsigned }}
+        run: |
+          $isTagRelease = $env:GITHUB_REF -like 'refs/tags/v*'
+          $hasSigningSecret = -not [string]::IsNullOrWhiteSpace($env:MK_SIGN_PFX_BASE64)
+
+          if ($isTagRelease -and -not $hasSigningSecret) {
+            throw 'Official tag builds require MK_SIGN_PFX_BASE64 and MK_SIGN_PFX_PASSWORD. Unsigned releases are blocked.'
+          }
+
+          try {
+            if ($hasSigningSecret) {
+              .\build-windows-singlefile.ps1 -Version $env:APP_VERSION -SignPfxPath '.\signing.pfx' -SignPfxPassword $env:MK_SIGN_PFX_PASSWORD -RequireSigning
+            }
+            elseif ($isTagRelease -or $env:ALLOW_UNSIGNED -ne 'true') {
+              throw 'Unsigned build is not allowed for this workflow run.'
+            }
+            else {
+              .\build-windows-singlefile.ps1 -Version $env:APP_VERSION -SkipSigning
+            }
+          }
+          finally {
+            if (Test-Path .\signing.pfx) {
+              Remove-Item .\signing.pfx -Force
+            }
+          }
+
+      - name: Release guard and SHA-256 checksum
+        shell: powershell
+        run: |
+          $exe = Join-Path '.\output' $env:EXE_NAME
+          $isTagRelease = $env:GITHUB_REF -like 'refs/tags/v*'
+          if ($isTagRelease) {
+            .\release-guard.ps1 -ExePath $exe -RequireValidSignature -RequireTimestamp
+          } else {
+            .\release-guard.ps1 -ExePath $exe
+          }
+          $hash = (Get-FileHash -Algorithm SHA256 $exe).Hash.ToLowerInvariant()
+          "$hash  $env:EXE_NAME" | Set-Content -Encoding ascii (".\output\{0}.sha256" -f $env:EXE_NAME)
+
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: mk_photo_mask_v4.3_windows
+          path: |
+            output/mk_photo_mask_v4.3.exe
+            output/mk_photo_mask_v4.3.exe.sha256
+          if-no-files-found: error
+
+      - name: Create GitHub Release and upload signed assets
+        if: startsWith(github.ref, 'refs/tags/v')
+        shell: powershell
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $tag = $env:GITHUB_REF_NAME
+          $exe = ".\output\$env:EXE_NAME"
+          $sha = "$exe.sha256"
+          $notes = '.\V4.3_RELEASE_NOTES.txt'
+
+          gh release view $tag *> $null
+          if ($LASTEXITCODE -eq 0) {
+            gh release upload $tag $exe $sha --clobber
+            if ($LASTEXITCODE -ne 0) { throw 'Failed to upload release assets.' }
+          }
+          else {
+            $args = @('release','create',$tag,$exe,$sha,'--title',"mk_photo_mask V$env:APP_VERSION")
+            if (Test-Path $notes) {
+              $args += @('--notes-file',$notes)
+            }
+            else {
+              $args += '--generate-notes'
+            }
+            gh @args
+            if ($LASTEXITCODE -ne 0) { throw 'Failed to create GitHub Release.' }
+          }
+
+      - name: Verify published GitHub Release assets
+        if: startsWith(github.ref, 'refs/tags/v')
+        shell: powershell
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $tag = $env:GITHUB_REF_NAME
+          New-Item -ItemType Directory -Force -Path '.\release-verify' | Out-Null
+          gh release download $tag --dir '.\release-verify' --pattern $env:EXE_NAME --pattern "$env:EXE_NAME.sha256" --clobber
+          if ($LASTEXITCODE -ne 0) { throw 'Failed to download published release assets for verification.' }
+          .\verify-github-release.ps1 -Directory '.\release-verify' -ExeName $env:EXE_NAME -RequireValidSignature -RequireTimestamp

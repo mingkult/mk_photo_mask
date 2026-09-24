@@ -1,0 +1,13 @@
+mk_photo_mask V4.1
+
+1. 真正 Canvas 延遲載入／釋放：大量照片時，離開目前操作範圍的照片會改用低解析預覽並釋放全尺寸 Canvas backing store；返回照片時再由原始檔或目前快照恢復。
+2. 新增記憶體最佳化狀態，顯示目前已釋放多少張離屏 Canvas。
+3. 快速AI辨識新增可切換的「團體照加強辨識（分區／多尺度）」：大型照片會以重疊分區補掃後與主要結果合併，以提高遠距小臉召回率。
+4. 本機備份容量管理加強：75% 起提示空間使用偏高，90% 起顯示警告；非強制自動備份會避免在空間接近上限時繼續寫入。
+5. 「清除備份」改為「清理備份空間」，保留目前工作區與原始照片。
+6. .mkpm 專案格式升級 schema v3；新增工作專案影像選項：PNG 無損或 WebP 高畫質省空間。舊 schema v1/v2 專案仍可載入。
+7. 工作專案與自動備份在需要目前像素時會自動喚醒被釋放的 Canvas，完成後再進入記憶體維護。
+8. Windows build script 新增可選 Authenticode 簽章參數（PFX 或 Thumbprint）與 RFC3161 時間戳。
+9. 新增 GitHub Actions Windows 自動建置 workflow；未提供簽章 secrets 時仍可輸出未簽章 EXE。
+10. 新增 SIGNING_GUIDE.md，說明本機／GitHub Actions 簽章與 SmartScreen 限制。
+11. Windows build 預設版本更新為 4.1。

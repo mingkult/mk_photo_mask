@@ -1,0 +1,11 @@
+mk_photo_mask V3.0 - AI + Manual simultaneous editing update
+==============================================================
+
+- AI face review and manual masking can now be used at the same time.
+- Existing manual selections are preserved when Fast AI Recognition starts.
+- AI face boxes and manual selection boxes are rendered together on one overlay.
+- Manual selections remain movable/resizable/copyable/deletable while AI face boxes are visible.
+- AI face boxes keep their existing click-to-toggle and resize-only behavior.
+- Clicking a manual selection gives manual editing priority; clicking an AI face gives AI editing priority.
+- Applying manual masks no longer dismisses the AI face review overlay.
+- Applying AI face masks ends AI review as before, while any remaining manual selections stay available.

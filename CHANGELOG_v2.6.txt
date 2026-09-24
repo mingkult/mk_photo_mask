@@ -1,0 +1,30 @@
+照片隱私遮蔽工具 v2.6
+
+主要更新
+1. AI 辨識先縮圖到最長邊 1280px，再映射回原始照片。
+2. MediaPipe 改為全距模型優先；無結果才補跑近距模型；失敗才切 FaceAPI。
+3. 移除重複執行 AI 辨識的問題。
+4. FaceAPI 優先嘗試 WebGL，無法使用才退回 CPU。
+5. Undo 一般操作改為只保存實際修改區域，大幅降低大圖記憶體使用量。
+6. 新增批次處理：一次選取多張圖片，自動遮蔽每張偵測到的全部人臉。
+7. 批次結果支援逐張下載。
+8. 批次結果支援純前端 ZIP 打包下載，不需網路或額外函式庫。
+
+批次模式說明
+- 使用目前的 AI 遮罩形狀、效果、人臉外圍保護範圍。
+- 為避免漏遮造成隱私風險，未偵測到人臉的照片會標記失敗，不會自動加入 ZIP。
+- 所有影像處理仍在本機瀏覽器完成。
+
+2026-08-27 介面整合更新
+- 單張上傳與批次上傳整合為同一個多檔選擇入口。
+- 第一張照片沿用原本預覽欄位；第二張起往下建立相同尺寸預覽欄位。
+- AI 可一次辨識所有預覽照片，先框出全部人臉供使用者逐臉決定是否遮罩。
+- 預設勾選所有偵測到的人臉，可點擊人臉框或按鈕取消／重新選取。
+- 新增「套用已勾選的人臉遮罩」、全選／全部取消功能。
+- 保留第一張照片原本手動框選精修、個別下載，以及 全部下載。
+
+
+v2.6 build cleanup
+- Windows single-file output renamed to mk_photo_mask_v2.6.exe.
+- Build clears old output/*.exe before creating a new executable.
+- Build-related helper/document filenames standardized to ASCII-safe English names.

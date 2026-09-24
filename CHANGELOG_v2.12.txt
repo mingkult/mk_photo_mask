@@ -1,0 +1,13 @@
+mk_photo_mask V2.13
+
+新增：可選「進階 AI 再掃描」本機備援。
+
+- 保留既有 MediaPipe Tasks / Legacy MediaPipe / FaceAPI 主流程。
+- 新增「進階 AI 再掃描」按鈕；使用者主動啟動時才呼叫本機 dlib / face_recognition helper。
+- Helper 僅綁定 127.0.0.1:8777；照片只傳到同一台電腦的 loopback，於記憶體中處理，不上傳網際網路。
+- 進階掃描只補入與既有人臉框重疊度不足的新框，不覆蓋主要 AI 結果。
+- 新補入的人臉框預設不遮蔽，仍需使用者自行點選。
+- 新增 advanced-ai-helper/advanced_ai_helper.py、install-and-run.cmd、build-helper.cmd。
+- 若 advanced_ai_helper.exe 放在 app/ 內，server.ps1 啟動時會自動在背景啟動，單檔 EXE 建置時也會一併打包。
+- Helper 未安裝或啟動失敗時，不影響原本 MediaPipe / FaceAPI。
+- 保留 V2.11 AI 人臉框僅可調整大小、不支援移動/複製/Delete 的操作規格。
