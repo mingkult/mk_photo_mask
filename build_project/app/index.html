@@ -6,7 +6,7 @@
   <meta name="color-scheme" content="light" />
   <link rel="icon" type="image/x-icon" href="./icon.ico" />
   <link rel="shortcut icon" type="image/x-icon" href="./icon.ico" />
-  <title>照片隱私遮蔽工具｜AI 完全離線可攜版 v4.3</title>
+  <title>照片隱私遮蔽工具｜AI 完全離線可攜版 v4.4</title>
 
   <style>
     /* =========================================================
@@ -848,7 +848,7 @@
     .ai-status[data-type="error"]{border-color:#fca5a5;background:#fef2f2}.ai-status[data-type="error"] b{color:#b91c1c}
     .ai-check-btn{width:100%;margin-top:10px}
 
-    /* v4.3 多照片統一上傳 / 預覽 / AI 複核 */
+    /* v4.4 多照片統一上傳 / 預覽 / AI 複核 */
     .photo-summary{margin-top:12px;padding:12px 13px;border:1px solid rgba(99,102,241,.2);border-radius:16px;background:rgba(255,255,255,.72);color:#475569;font-size:12px;line-height:1.6}
     .photo-summary-row{display:flex;align-items:center;justify-content:space-between;gap:10px}.photo-summary-row b{color:#4338ca}.photo-summary .mini-btn{border:0;border-radius:9px;padding:6px 9px;background:#eef2ff;color:#4f46e5;font-weight:850;cursor:pointer}.photo-summary .mini-btn:disabled{opacity:.45;cursor:not-allowed}
     .ai-review-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:9px}.ai-review-actions .btn{min-height:40px}.ai-review-tools{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}.ai-review-tools button{border:1px solid #c7d2fe;border-radius:999px;padding:6px 9px;background:#fff;color:#4f46e5;font-size:11px;font-weight:850;cursor:pointer}.ai-review-tools button:disabled{opacity:.45;cursor:not-allowed}
@@ -867,7 +867,7 @@
     .ai-progress{height:8px;overflow:hidden;margin:10px 0 6px;border-radius:999px;background:#e2e8f0}.ai-progress>span{display:block;width:0;height:100%;background:linear-gradient(90deg,#6366f1,#ec4899);transition:width .2s}
     @media(max-width:460px){.ai-review-actions{grid-template-columns:1fr}.photo-summary-row{align-items:flex-start;flex-direction:column}}
   
-    /* v4.3 workflow UI: AI first, manual touch-up second, download last */
+    /* v4.4 workflow UI: AI first, manual touch-up second, download last */
     .prep-title {
       display:flex; align-items:center; gap:10px; margin:0 0 12px; font-size:17px; font-weight:950;
     }
@@ -917,7 +917,7 @@
     .compact-check { margin-top:9px; min-height:38px !important; font-size:12px !important; }
 
   
-    /* v4.3 unified mask apply */
+    /* v4.4 unified mask apply */
     #downloadAllZipBtn{
       min-height:52px;
       padding:11px 16px;
@@ -1014,7 +1014,7 @@
 
   <style>
     /* =========================================================
-       V4.3 UI polish refresh：藍紫青三色、卡片層次、視覺聚焦
+       V4.4 UI polish refresh：藍紫青三色、卡片層次、視覺聚焦
        ========================================================= */
     :root {
       --paper: rgba(255,255,255,.82);
@@ -1637,7 +1637,7 @@
 </style>
 
   <style id="v30-left-panel-usability">
-    /* V4.3 多圖快速導覽與批次進度 */
+    /* V4.4 多圖快速導覽與批次進度 */
     .batch-progress-text {
       margin-top: 7px;
       color: #334155;
@@ -1792,25 +1792,6 @@
     .photo-batch-actions button:disabled { opacity:.42; cursor:not-allowed; }
     .photo-batch-actions .batch-close-btn { color:#b91c1c; background:#fff7f7; }
     .photo-batch-actions .batch-download-btn { color:#0f766e; background:#f0fdfa; }
-    .project-tools { display:grid; grid-template-columns:1fr 1fr; gap:7px; margin-top:9px; }
-    .project-tools button { min-height:34px; padding:0 8px; border:1px solid rgba(99,102,241,.22); border-radius:10px; background:#fff; color:#4338ca; font-size:11px; font-weight:950; cursor:pointer; }
-    .project-tools button:hover:not(:disabled) { background:#eef2ff; border-color:rgba(79,70,229,.38); }
-    .project-tools button:disabled { opacity:.42; cursor:not-allowed; }
-    .project-tools .project-load-btn { color:#0f766e; border-color:rgba(13,148,136,.24); }
-    .project-tools .project-load-btn:hover:not(:disabled) { background:#f0fdfa; border-color:rgba(13,148,136,.4); }
-    .project-tools .project-recovery-btn { color:#9a3412; border-color:rgba(234,88,12,.24); background:#fffaf5; }
-    .project-tools .project-recovery-btn:hover:not(:disabled) { background:#fff7ed; border-color:rgba(234,88,12,.4); }
-    .project-tools .project-clear-backup-btn { color:#64748b; border-color:rgba(100,116,139,.22); }
-    .auto-backup-row { grid-column:1/-1; display:flex; align-items:center; justify-content:space-between; gap:8px; min-height:28px; padding:5px 7px; border:1px solid rgba(148,163,184,.18); border-radius:9px; background:rgba(248,250,252,.9); color:#64748b; font-size:10px; font-weight:800; }
-    .auto-backup-toggle { display:inline-flex; align-items:center; gap:5px; cursor:pointer; white-space:nowrap; }
-    .auto-backup-toggle input { width:15px; height:15px; margin:0; accent-color:#4f46e5; }
-    .auto-backup-status { min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; text-align:right; }
-    .auto-backup-status[data-kind="ok"] { color:#047857; }
-    .auto-backup-status[data-kind="busy"] { color:#7c3aed; }
-    .auto-backup-status[data-kind="error"] { color:#b91c1c; }
-    .backup-storage-info { grid-column:1/-1; min-height:18px; color:#64748b; font-size:9px; font-weight:800; line-height:1.45; text-align:center; }
-    .backup-now-btn { color:#1d4ed8 !important; border-color:rgba(37,99,235,.24) !important; background:#f8fbff !important; }
-    .backup-now-btn:hover:not(:disabled) { background:#eff6ff !important; border-color:rgba(37,99,235,.4) !important; }
     .history-row {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
@@ -1820,7 +1801,7 @@
       font-size: 12px;
     }
 
-    /* V4.3 左側操作面板可用性調整：獨立捲動 + 放大已選照片區 */
+    /* V4.4 左側操作面板可用性調整：獨立捲動 + 放大已選照片區 */
     @media (min-width: 981px) {
       .control-panel {
         position: sticky;
@@ -1911,26 +1892,22 @@
 
 
   <style>
-    /* V4.3：大量照片記憶體、團體照 AI、備份容量與工作專案容量優化 */
+    /* V4.4：大量照片記憶體與團體照 AI 優化 */
     .canvas-parked-preview{display:block;max-width:100%;height:auto;border-radius:8px;object-fit:contain;background:#fff}.canvas-parked-preview[role="button"]{cursor:pointer;outline:none}.canvas-parked-preview[role="button"]:focus-visible{box-shadow:0 0 0 4px rgba(37,99,235,.24)}
     .canvas-memory-status{margin-top:7px;font-size:12px;font-weight:850;color:#475569}
     .canvas-memory-status[data-kind="active"]{color:#166534}
     .ai-enhance-toggle{display:flex;align-items:center;gap:7px;margin-top:8px;padding:8px 10px;border:1px solid rgba(99,102,241,.18);border-radius:12px;background:#f8fafc;color:#334155;font-size:12px;font-weight:850}
     .ai-enhance-toggle input{accent-color:#4f46e5}
-    .project-snapshot-row{grid-column:1/-1;display:flex;align-items:center;gap:8px;justify-content:space-between;padding:8px 10px;border:1px solid rgba(99,102,241,.14);border-radius:12px;background:#f8fafc;color:#475569;font-size:12px;font-weight:800}
-    .project-snapshot-row select{min-width:150px;border:1px solid #cbd5e1;border-radius:9px;background:#fff;padding:6px 8px;color:#334155;font:inherit}
-    .backup-storage-info[data-level="warn"]{color:#b45309;font-weight:900}
-    .backup-storage-info[data-level="danger"]{color:#b91c1c;font-weight:950}
   </style>
 </head>
 
 <body>
   <main class="app-shell">
     <nav class="navbar">
-      <div class="brand" aria-label="mk_photo_mask V4.3 阿貴校長教育現場系列工具">
+      <div class="brand" aria-label="mk_photo_mask V4.4 阿貴校長教育現場系列工具">
         <img class="brand-logo" src="./icon.ico" alt="mk_photo_mask 圖示" />
         <span class="brand-text">
-          <a class="brand-home" href="./#" title="回到主頁面"><strong>mk_photo_mask V4.3</strong></a>
+          <a class="brand-home" href="./#" title="回到主頁面"><strong>mk_photo_mask V4.4</strong></a>
           <a class="brand-site" href="https://emaker.tw" target="_blank" rel="noopener noreferrer" title="另開視窗前往 emaker.tw"><em>阿貴校長教育現場系列工具</em></a>
         </span>
       </div>
@@ -2012,20 +1989,6 @@
                 <button type="button" id="batchCloseBtn" class="batch-close-btn" style="grid-column:1/-1">✕ 關閉選取</button>
               </div>
             </div>
-          </div>
-          <div class="project-tools" aria-label="工作專案">
-            <button type="button" id="saveProjectBtn" disabled>💾 儲存工作</button>
-            <button type="button" id="loadProjectBtn" class="project-load-btn">📂 載入工作</button>
-            <button type="button" id="restoreAutoBackupBtn" class="project-recovery-btn" disabled>🛟 恢復備份</button>
-            <button type="button" id="clearAutoBackupBtn" class="project-clear-backup-btn" disabled>🧹 清理備份空間</button>
-            <button type="button" id="backupNowBtn" class="backup-now-btn" disabled style="grid-column:1/-1">⚡ 立即建立本機備份</button>
-            <div class="auto-backup-row">
-              <label class="auto-backup-toggle"><input id="autoBackupEnabled" type="checkbox" checked> 自動備份（本機）</label>
-              <span class="auto-backup-status" id="autoBackupStatus" data-kind="idle">尚無備份</span>
-            </div>
-            <div class="backup-storage-info" id="backupStorageInfo">備份容量：尚無資料</div>
-            <div class="project-snapshot-row"><label for="projectSnapshotFormat">工作專案影像</label><select id="projectSnapshotFormat"><option value="auto">自動選較小（PNG／WebP）</option><option value="png">PNG 無損（較大）</option><option value="webp">WebP 高畫質（較省空間）</option></select></div>
-            <input id="projectFileInput" type="file" accept=".mkpm,.zip,application/zip" hidden>
           </div>
         </div>
 
@@ -2214,18 +2177,8 @@
     const batchResetBtn = document.getElementById("batchResetBtn");
     const batchDownloadBtn = document.getElementById("batchDownloadBtn");
     const batchCloseBtn = document.getElementById("batchCloseBtn");
-    const saveProjectBtn = document.getElementById("saveProjectBtn");
-    const loadProjectBtn = document.getElementById("loadProjectBtn");
-    const restoreAutoBackupBtn = document.getElementById("restoreAutoBackupBtn");
-    const clearAutoBackupBtn = document.getElementById("clearAutoBackupBtn");
-    const backupNowBtn = document.getElementById("backupNowBtn");
-    const autoBackupEnabled = document.getElementById("autoBackupEnabled");
-    const autoBackupStatus = document.getElementById("autoBackupStatus");
     const canvasMemoryStatus = document.getElementById("canvasMemoryStatus");
-    const projectSnapshotFormat = document.getElementById("projectSnapshotFormat");
     const groupAiEnhanceEnabled = document.getElementById("groupAiEnhanceEnabled");
-    const backupStorageInfo = document.getElementById("backupStorageInfo");
-    const projectFileInput = document.getElementById("projectFileInput");
     const mainResetPhotoBtn = document.getElementById("mainResetPhotoBtn");
     const mainClosePhotoBtn = document.getElementById("mainClosePhotoBtn");
     const downloadAllZipBtn = document.getElementById("downloadAllZipBtn");
@@ -2328,21 +2281,12 @@
       applyInProgress: false,
       activePhotoItem: null,
       photoFilter: "all",
-      autoBackupInProgress: false,
-      autoBackupLastSavedAt: 0,
-      autoBackupLastFingerprint: "",
-      autoBackupAvailable: false,
-      autoBackupError: "",
-      autoBackupSizeBytes: 0,
       groupAiEnhance: true,
-      projectSnapshotFormat: "auto",
       canvasMemoryBusy: false,
       canvasMemoryParkedCount: 0,
       canvasHistoryTrimmedCount: 0,
       cancelRequested: false,
       cancellableOperationLabel: "",
-      lastUserActivityAt: Date.now(),
-      customStickerRevision: 0,
 
       // AI 框本體採「點擊切換、拖曳建立手動框」：
       // pointerdown 先暫存，只有 pointerup 且未明顯移動才視為 AI 點擊。
@@ -2360,25 +2304,12 @@
     const ADVANCED_AI_TIMEOUT_MS = 90000;
     const SETTINGS_STORAGE_KEY = "mk_photo_mask_settings";
     const LEGACY_SETTINGS_STORAGE_KEYS = ["mk_photo_mask_v31_settings"];
-    const PROJECT_FORMAT = "mk_photo_mask_project";
-    const PROJECT_SCHEMA_VERSION = 4;
-    const PROJECT_SUPPORTED_SCHEMA_VERSIONS = new Set([1, 2, 3, 4]);
-    const AUTO_BACKUP_DB_NAME = "mk_photo_mask_recovery";
-    const AUTO_BACKUP_DB_VERSION = 1;
-    const AUTO_BACKUP_STORE = "backups";
-    const AUTO_BACKUP_KEY = "latest";
-    const AUTO_BACKUP_ENABLED_KEY = "mk_photo_mask_auto_backup_enabled";
-    const AUTO_BACKUP_CHECK_MS = 15000;
-    const AUTO_BACKUP_MIN_INTERVAL_MS = 120000;
-    const AUTO_BACKUP_IDLE_MS = 12000;
     const CANVAS_MEMORY_MIN_PHOTOS = 6;
     const CANVAS_MEMORY_KEEP_RADIUS_SMALL_SET = 2;
     const CANVAS_MEMORY_KEEP_RADIUS_LARGE_SET = 1;
     const CANVAS_MEMORY_IDLE_MS = 1500;
     const PARKED_HISTORY_MAX_BYTES = 12 * 1024 * 1024;
     const PARKED_HISTORY_MAX_GROUPS = 2;
-    const BACKUP_STORAGE_WARN_RATIO = 0.75;
-    const BACKUP_STORAGE_DANGER_RATIO = 0.90;
     const GROUP_AI_MIN_SIDE = 1600;
     const GROUP_AI_LARGE_TILE_MAX = 1700;
     const GROUP_AI_SMALL_TILE_MAX = 1050;
@@ -2399,8 +2330,7 @@
         coverColor: coverColor.value,
         emoji: emojiSelect.value,
         facePadding: Number(facePadding.value),
-        groupAiEnhance: groupAiEnhanceEnabled ? !!groupAiEnhanceEnabled.checked : true,
-        projectSnapshotFormat: ["auto", "png", "webp"].includes(projectSnapshotFormat?.value) ? projectSnapshotFormat.value : "auto"
+        groupAiEnhance: groupAiEnhanceEnabled ? !!groupAiEnhanceEnabled.checked : true
       };
     }
 
@@ -2436,8 +2366,6 @@
       if (typeof saved.emoji === "string" && [...emojiSelect.options].some((opt) => opt.value === saved.emoji)) emojiSelect.value = saved.emoji;
       if (groupAiEnhanceEnabled) groupAiEnhanceEnabled.checked = saved.groupAiEnhance !== false;
       state.groupAiEnhance = groupAiEnhanceEnabled ? !!groupAiEnhanceEnabled.checked : true;
-      if (projectSnapshotFormat) projectSnapshotFormat.value = ["auto", "png", "webp"].includes(saved.projectSnapshotFormat) ? saved.projectSnapshotFormat : "auto";
-      state.projectSnapshotFormat = ["auto", "png", "webp"].includes(projectSnapshotFormat?.value) ? projectSnapshotFormat.value : "auto";
 
       document.querySelectorAll(".shape-btn").forEach((button) => button.classList.toggle("active", button.dataset.shape === state.shape));
       document.querySelectorAll(".tool-card").forEach((card) => card.classList.toggle("active", card.dataset.tool === state.tool));
@@ -2454,40 +2382,19 @@
     }
 
     restoreUserSettings();
+    // V4.4：已移除工作專案與自動備份功能；啟動時清掉舊版留下的本機備份資料與設定旗標。
+    try {
+      localStorage.removeItem("mk_photo_mask_auto_backup_enabled");
+      saveUserSettings();
+      if (window.indexedDB) indexedDB.deleteDatabase("mk_photo_mask_recovery");
+    } catch (_) { }
     groupAiEnhanceEnabled?.addEventListener("change", () => { state.groupAiEnhance = !!groupAiEnhanceEnabled.checked; saveUserSettings(); });
-    projectSnapshotFormat?.addEventListener("change", () => { state.projectSnapshotFormat = ["auto", "png", "webp"].includes(projectSnapshotFormat.value) ? projectSnapshotFormat.value : "auto"; saveUserSettings(); });
 
-    /* V4.3 Hotfix: restored shared image/mask utilities accidentally removed during unified-apply refactor. */
+    /* V4.4 Hotfix: restored shared image/mask utilities accidentally removed during unified-apply refactor. */
     function safeBaseName(name) { return (name || "photo").replace(/\.[^.]+$/, "").replace(/[^\w\u4e00-\u9fff-]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60) || "photo"; }
     function canvasToBlob(canvas) { return new Promise((resolve, reject) => canvas.toBlob((blob) => blob ? resolve(blob) : reject(new Error("建立 PNG 失敗")), "image/png")); }
     function canvasToEncodedBlob(canvas, type = "image/png", quality = 0.96) {
       return new Promise((resolve, reject) => canvas.toBlob((blob) => blob ? resolve(blob) : reject(new Error("建立影像快照失敗")), type, quality));
-    }
-    async function canvasToProjectSnapshot(canvas) {
-      const mode = ["auto", "png", "webp"].includes(state.projectSnapshotFormat) ? state.projectSnapshotFormat : "auto";
-      if (mode === "png") {
-        const blob = await canvasToBlob(canvas);
-        return { blob, extension: "png", mime: "image/png", encoding: "png", compared: false };
-      }
-      if (mode === "webp") {
-        try {
-          const blob = await canvasToEncodedBlob(canvas, "image/webp", 0.96);
-          if (blob?.size) return { blob, extension: "webp", mime: "image/webp", encoding: "webp", compared: false };
-        } catch (error) { console.warn("WebP 工作快照失敗，改用 PNG。", error); }
-        const blob = await canvasToBlob(canvas);
-        return { blob, extension: "png", mime: "image/png", encoding: "png-fallback", compared: false };
-      }
-      const pngBlob = await canvasToBlob(canvas);
-      try {
-        const webpBlob = await canvasToEncodedBlob(canvas, "image/webp", 0.96);
-        if (webpBlob?.size && webpBlob.size < pngBlob.size) {
-          return { blob: webpBlob, extension: "webp", mime: "image/webp", encoding: "auto-webp", compared: true, pngBytes: pngBlob.size, webpBytes: webpBlob.size };
-        }
-        return { blob: pngBlob, extension: "png", mime: "image/png", encoding: "auto-png", compared: true, pngBytes: pngBlob.size, webpBytes: webpBlob?.size || 0 };
-      } catch (error) {
-        console.warn("自動比較 WebP 失敗，保留 PNG。", error);
-        return { blob: pngBlob, extension: "png", mime: "image/png", encoding: "auto-png-fallback", compared: true, pngBytes: pngBlob.size, webpBytes: 0 };
-      }
     }
     async function canvasToMemoryPreviewBlob(canvas, maxSide = 1200) {
       const side = Math.max(canvas.width, canvas.height);
@@ -2516,15 +2423,6 @@
       item.overlayCtx.clearRect(0, 0, item.overlay.width, item.overlay.height);
     }
 
-    function imageBlobToImage(blob) {
-      return new Promise((resolve, reject) => {
-        const url = URL.createObjectURL(blob);
-        const image = new Image();
-        image.onload = () => { URL.revokeObjectURL(url); resolve(image); };
-        image.onerror = () => { URL.revokeObjectURL(url); reject(new Error("貼圖資料無法讀取")); };
-        image.src = url;
-      });
-    }
     function clampFaceBoxForCanvas(face, canvas) { const {x,y,width,height}=face,p=Number(facePadding.value)/100,shape=state.shape||"rect";if(shape==="rect"){const ex=width*p,ey=height*p,l=clamp(x-ex,0,canvas.width),t=clamp(y-ey,0,canvas.height),r=clamp(x+width+ex,0,canvas.width),b=clamp(y+height+ey,0,canvas.height);return{x:Math.floor(l),y:Math.floor(t),width:Math.max(1,Math.ceil(r-l)),height:Math.max(1,Math.ceil(b-t)),shape:"rect"};}const d=Math.max(width,height)*(1+p*2),cx=x+width/2,cy=y+height/2,rad=Math.max(1,Math.min(d/2,cx,canvas.width-cx,cy,canvas.height-cy));return{x:Math.floor(cx-rad),y:Math.floor(cy-rad),width:Math.max(2,Math.round(rad*2)),height:Math.max(2,Math.round(rad*2)),shape:"circle"}; }
     function refreshAiReviewSelections(){if(!state.faceReviewMode)return;state.photoItems.forEach(item=>{if(!(item.faces||[]).length)return;if(!item.aiSelectionsCustomized){const dims=item.canvasParked?{width:item.pixelWidth,height:item.pixelHeight}:item.canvas;item.selections=item.faces.map(face=>clampFaceBoxForCanvas(face,dims));}drawFaceReview(item);});}
     function applyMosaicToCanvas(canvas, sel) { const ctx=canvas.getContext("2d"),bs=Number(mosaicSize.value),tiny=document.createElement("canvas");tiny.width=Math.max(1,Math.ceil(sel.width/bs));tiny.height=Math.max(1,Math.ceil(sel.height/bs));const tc=tiny.getContext("2d");tc.drawImage(canvas,sel.x,sel.y,sel.width,sel.height,0,0,tiny.width,tiny.height);ctx.save();clipToSelection(ctx,sel);ctx.imageSmoothingEnabled=false;ctx.drawImage(tiny,0,0,tiny.width,tiny.height,sel.x,sel.y,sel.width,sel.height);ctx.restore(); }
@@ -2764,11 +2662,6 @@
       clearPhotosBtn.disabled = state.multiProcessing || !hasPhotos;
       if (addPhotosBtn) addPhotosBtn.disabled = state.multiProcessing || state.faceDetecting || state.photoItems.length >= MULTI_MAX_FILES;
       downloadAllZipBtn.disabled = state.multiProcessing || !hasPhotos;
-      if (saveProjectBtn) saveProjectBtn.disabled = state.multiProcessing || state.faceDetecting || state.autoBackupInProgress || !hasPhotos;
-      if (loadProjectBtn) loadProjectBtn.disabled = state.multiProcessing || state.faceDetecting || state.autoBackupInProgress;
-      if (restoreAutoBackupBtn) restoreAutoBackupBtn.disabled = state.multiProcessing || state.faceDetecting || state.autoBackupInProgress || !state.autoBackupAvailable;
-      if (clearAutoBackupBtn) clearAutoBackupBtn.disabled = state.multiProcessing || state.faceDetecting || state.autoBackupInProgress || !state.autoBackupAvailable;
-      if (backupNowBtn) backupNowBtn.disabled = state.multiProcessing || state.faceDetecting || state.autoBackupInProgress || !hasPhotos;
       updateCancelOperationUi();
       if (mainResetPhotoBtn) mainResetPhotoBtn.disabled = state.multiProcessing || state.faceDetecting || !hasPhotos;
       if (mainClosePhotoBtn) mainClosePhotoBtn.disabled = state.multiProcessing || state.faceDetecting || !hasPhotos;
@@ -3326,6 +3219,20 @@
       };
     }
 
+    function ensurePhotoPreviewVisible(item) {
+      if (!item) return;
+      if (item.isMain) {
+        emptyState.hidden = true;
+        canvasWrap.hidden = false;
+        if (mainParkedPreview) mainParkedPreview.hidden = true;
+      }
+      item.canvas.style.display = "block";
+      item.overlay.style.display = "block";
+      item.canvas.hidden = false;
+      item.overlay.hidden = false;
+      item.canvasParked = false;
+    }
+
     async function loadMainPhoto(file) {
       const source = await fileToCanvas(file);
       mainCanvas.width = source.width; mainCanvas.height = source.height;
@@ -3341,7 +3248,6 @@
       state.resized = false;
       state.customSticker = null;
       state.faceDetecting = false;
-      clearSelection();
       emptyState.hidden = true;
       canvasWrap.hidden = false;
       statusText.textContent = `第 1 張｜${file.name}`;
@@ -3349,13 +3255,18 @@
       stickerStatus.textContent = "目前使用 Emoji 貼圖。";
       updateWorkspaceUploadState();
       const item = createPhotoItem(file, mainCanvas, overlayCanvas, true);
-      // V4.3：原始像素不再常駐為完整 ImageData；需要重設時由原始 File 重新解碼，降低多圖 RAM 使用。
+      // V4.4 Hotfix 5：先建立並指定目前照片，再清理選取狀態，避免沿用舊 activePhotoItem 造成預覽狀態被誤清。
       item.originalImageData = null;
       item.parkedPreviewImg = mainParkedPreview;
       if (mainParkedPreview) mainParkedPreview.alt = file.name;
       item.originalStatusText = `第 1 張｜${file.name}`;
       item.originalMetaText = `${source.width} × ${source.height} px｜本機處理`;
       state.activePhotoItem = item;
+      ensurePhotoPreviewVisible(item);
+      clearSelection();
+      // 讓瀏覽器至少完成一個繪製週期後再進入後續批次流程，避免大量照片載入時首張預覽尚未顯示即進入記憶體維護。
+      await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+      ensurePhotoPreviewVisible(item);
       return item;
     }
 
@@ -3376,7 +3287,9 @@
       const ws = document.createElement("div"); ws.className = "workspace additional-workspace";
       const wrap = document.createElement("div"); wrap.className = "canvas-wrap";
       const c = document.createElement("canvas"); c.width = sourceCanvas.width; c.height = sourceCanvas.height; c.getContext("2d", {willReadFrequently:true}).drawImage(sourceCanvas, 0, 0);
+      c.style.display = "block"; c.hidden = false;
       const ov = document.createElement("canvas"); ov.className = "overlay-canvas"; ov.width = c.width; ov.height = c.height;
+      ov.style.display = "block"; ov.hidden = false;
       const parkedPreview = document.createElement("img"); parkedPreview.className = "canvas-parked-preview"; parkedPreview.alt = file.name; parkedPreview.hidden = true;
       wrap.append(parkedPreview, c, ov); ws.append(wrap);
       const controls = document.createElement("div"); controls.className = "face-review-controls"; controls.hidden = true;
@@ -3450,7 +3363,7 @@
 
     async function parkPhotoCanvas(item) {
       if (!item || item === getActivePhotoItem() || item.canvasParked || item.memoryBusy) return false;
-      if (state.multiProcessing || state.faceDetecting || state.applyInProgress || state.autoBackupInProgress) return false;
+      if (state.multiProcessing || state.faceDetecting || state.applyInProgress) return false;
       item.memoryBusy = true;
       try {
         // 非作用中照片的 manualSelections 已在離開照片時同步；這裡不可再用全域 state.selection 覆寫。
@@ -3482,7 +3395,7 @@
       clearTimeout(canvasMemoryTimer);
       if (state.photoItems.length < CANVAS_MEMORY_MIN_PHOTOS) { updateCanvasMemoryStatus(); return; }
       canvasMemoryTimer = setTimeout(async () => {
-        if (state.canvasMemoryBusy || state.multiProcessing || state.faceDetecting || state.applyInProgress || state.autoBackupInProgress) return;
+        if (state.canvasMemoryBusy || state.multiProcessing || state.faceDetecting || state.applyInProgress) return;
         state.canvasMemoryBusy = true;
         try {
           const active = getActivePhotoItem();
@@ -4170,7 +4083,9 @@ ${filename}${modifiedWarning}
         }
 
         renderPhotoNavigator();
-        scheduleCanvasMemoryMaintenance();
+        // 首張預覽先穩定顯示，再排程離屏 Canvas 釋放。
+        if (state.photoItems[0]) ensurePhotoPreviewVisible(state.photoItems[0]);
+        requestAnimationFrame(() => scheduleCanvasMemoryMaintenance());
         updatePhotoItemLabels();
         photoSummary.textContent = `共 ${state.photoItems.length} 張照片`;
         const notes = [];
@@ -4689,7 +4604,6 @@ ${filename}${modifiedWarning}
         const image = new Image();
         image.onload = () => {
           state.customSticker = image;
-          state.customStickerRevision += 1;
           stickerStatus.textContent = `自訂貼圖已載入：${file.name}`;
           showToast("自訂貼圖載入成功");
         };
@@ -4701,7 +4615,6 @@ ${filename}${modifiedWarning}
 
     emojiSelect.addEventListener("change", () => {
       state.customSticker = null;
-      state.customStickerRevision += 1;
       stickerStatus.textContent = "目前使用 Emoji 貼圖。";
       scheduleSettingsSave();
     });
@@ -4798,7 +4711,7 @@ ${filename}${modifiedWarning}
     }
 
     /* =========================================================
-       AI 人臉辨識 v4.3：Native FaceDetector + MediaPipe 雙模型，FaceAPI 備援，支援形狀與效果切換
+       AI 人臉辨識 v4.4：Native FaceDetector + MediaPipe 雙模型，FaceAPI 備援，支援形狀與效果切換
        ========================================================= */
 
     const MEDIAPIPE_ASSET_PATH = "./mediapipe";
@@ -4963,7 +4876,7 @@ ${filename}${modifiedWarning}
       const isLocalHost = ["127.0.0.1", "localhost", "::1"].includes(location.hostname);
       const isHttp = location.protocol === "http:" || location.protocol === "https:";
       if (!isHttp || !isLocalHost) {
-        throw new Error("目前不是從本機 HTTP Server 啟動。請使用 start.bat 或 mk_photo_mask_v4.3.exe，網址應為 http://127.0.0.1:8765/ 類型，而不是直接雙擊 index.html。" );
+        throw new Error("目前不是從本機 HTTP Server 啟動。請使用 start.bat 或 mk_photo_mask_v4.4.exe，網址應為 http://127.0.0.1:8765/ 類型，而不是直接雙擊 index.html。" );
       }
     }
 
@@ -5282,7 +5195,7 @@ ${filename}${modifiedWarning}
       } catch (error) { console.warn("團體照分區 Legacy MediaPipe 失敗。", error); }
       try { collected.push(...await detectFacesWithNativeApi(tileCanvas, 1, 1)); } catch (_) {}
 
-      // V4.3 第二模型補抓：只在精細小尺度 tile 使用 FaceAPI，避免大量照片在 CPU 模式下過慢。
+      // V4.4 第二模型補抓：只在精細小尺度 tile 使用 FaceAPI，避免大量照片在 CPU 模式下過慢。
       if (useSecondModel) {
         try {
           const faceApi = await detectFacesWithFaceApi(tileCanvas, 1, 1, GROUP_AI_FACEAPI_MIN_CONFIDENCE);
@@ -5353,7 +5266,7 @@ ${filename}${modifiedWarning}
       let tasksError = null;
       let mediaPipeError = null;
 
-      // V4.3：若已安裝最新 MediaPipe Tasks Vision，優先使用官方新版 API。
+      // V4.4：若已安裝最新 MediaPipe Tasks Vision，優先使用官方新版 API。
       try {
         if (!state.mediaPipeTasksChecked) await probeMediaPipeTasksAssets();
         if (state.mediaPipeTasksReady) {
@@ -6179,544 +6092,7 @@ ${filename}${modifiedWarning}
       const end=new Blob([u32(0x06054b50),u16(0),u16(0),u16(entries.length),u16(entries.length),u32(centralSize),u32(offset),u16(0)]);
       return new Blob([...localParts,...centrals,end],{type:"application/zip"});
     }
-    function getProjectPhotoSnapshot(item, index) {
-      const hasPixelEdits = !!item.applied || !!item.hasUntrackedEdits || getHistoryForItem(item).length > 0;
-      return {
-        index,
-        fileName: item.file?.name || `photo-${index + 1}.png`,
-        fileType: item.file?.type || "application/octet-stream",
-        sourceName: item.sourceName || safeBaseName(item.file?.name || `photo-${index + 1}`),
-        originalEntry: `original/${String(index + 1).padStart(4, "0")}.bin`,
-        currentEntry: null,
-        currentMime: null,
-        currentMatchesOriginal: !hasPixelEdits,
-        faces: (item.faces || []).map((face) => ({ ...face })),
-        selections: cloneSelections(item.selections || []),
-        selectedFaces: [...(item.selectedFaces || [])],
-        activeAiFaceIndex: item.activeAiFaceIndex ?? -1,
-        aiSelectionsCustomized: !!item.aiSelectionsCustomized,
-        detected: !!item.detected,
-        applied: !!item.applied,
-        engine: item.engine || "",
-        manualSelections: cloneSelections(item.manualSelections || []),
-        activeManualIndex: item.activeManualIndex ?? -1,
-        downloaded: !!item.downloaded,
-        hasUntrackedEdits: !!item.hasUntrackedEdits,
-        statusText: item.statusEl?.textContent || "",
-        metaText: item.metaEl?.textContent || ""
-      };
-    }
-
-    async function customStickerToBlob() {
-      if (!state.customSticker?.naturalWidth || !state.customSticker?.naturalHeight) return null;
-      const canvas = document.createElement("canvas");
-      canvas.width = state.customSticker.naturalWidth;
-      canvas.height = state.customSticker.naturalHeight;
-      canvas.getContext("2d").drawImage(state.customSticker, 0, 0);
-      return canvasToBlob(canvas);
-    }
-
-    async function buildWorkProjectPackage({ progressLabel = "", createdAt = new Date().toISOString() } = {}) {
-      syncActiveManualSelection(getActivePhotoItem());
-      const entries = [];
-      const photos = [];
-      if (progressLabel) setBatchProgress(0, state.photoItems.length, progressLabel);
-      for (let i = 0; i < state.photoItems.length; i++) {
-        if (state.cancellableOperationLabel) throwIfOperationCancelled();
-        const item = state.photoItems[i];
-        const snapshot = getProjectPhotoSnapshot(item, i);
-        entries.push({ name: snapshot.originalEntry, blob: item.file });
-        if (!snapshot.currentMatchesOriginal) {
-          await ensurePhotoCanvasLoaded(item);
-          const encoded = await canvasToProjectSnapshot(item.canvas);
-          snapshot.currentEntry = `current/${String(i + 1).padStart(4, "0")}.${encoded.extension}`;
-          snapshot.currentMime = encoded.mime;
-          snapshot.currentEncoding = encoded.encoding || encoded.extension;
-          snapshot.currentBytes = encoded.blob.size || 0;
-          if (encoded.compared) { snapshot.pngBytes = encoded.pngBytes || 0; snapshot.webpBytes = encoded.webpBytes || 0; }
-          entries.push({ name: snapshot.currentEntry, blob: encoded.blob });
-        }
-        photos.push(snapshot);
-        if (progressLabel) setBatchProgress(i + 1, state.photoItems.length, progressLabel);
-        await new Promise((resolve) => setTimeout(resolve, 0));
-      }
-      const stickerBlob = await customStickerToBlob();
-      if (stickerBlob) entries.push({ name: "assets/custom-sticker.png", blob: stickerBlob });
-      const manifest = {
-        format: PROJECT_FORMAT,
-        schemaVersion: PROJECT_SCHEMA_VERSION,
-        appVersion: "4.3",
-        projectStorage: "optimized-v4-auto-snapshot",
-        createdAt,
-        activeIndex: Math.max(0, state.photoItems.indexOf(getActivePhotoItem())),
-        photoFilter: state.photoFilter || "all",
-        faceReviewMode: !!state.faceReviewMode,
-        settings: getUserSettingsSnapshot(),
-        hasCustomSticker: !!stickerBlob,
-        photos
-      };
-      entries.unshift({ name: "manifest.json", blob: new Blob([JSON.stringify(manifest)], { type: "application/json" }) });
-      const projectBlob = await makeZip(entries);
-      return { projectBlob, manifest, photos };
-    }
-
-    async function saveWorkProject() {
-      if (!state.photoItems.length || state.multiProcessing || state.autoBackupInProgress) return;
-      state.multiProcessing = true; beginCancellableOperation("儲存工作"); updateButtons();
-      try {
-        const { projectBlob, photos } = await buildWorkProjectPackage({ progressLabel: "儲存工作" });
-        multiPhotoStatus.textContent = "正在建立工作專案檔…";
-        const d = new Date(), pad = (n) => String(n).padStart(2, "0");
-        downloadBlob(projectBlob, `mk_photo_mask-work-${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}-${pad(d.getHours())}${pad(d.getMinutes())}.mkpm`);
-        const reusedOriginalCount = photos.filter((photo) => !photo.currentEntry).length;
-        const webpCount = photos.filter((photo) => /webp/.test(photo.currentEncoding || "")).length;
-        const pngCount = photos.filter((photo) => /png/.test(photo.currentEncoding || "")).length;
-        const autoText = state.projectSnapshotFormat === "auto" ? `；自動比較結果：WebP ${webpCount} 張、PNG ${pngCount} 張` : "";
-        multiPhotoStatus.textContent = `工作專案已儲存，共 ${state.photoItems.length} 張照片；${reusedOriginalCount} 張未修改照片不重複保存畫面副本${autoText}。`;
-        showToast("工作專案已儲存（智慧壓縮完成）");
-      } catch (error) {
-        if (isOperationCancelledError(error)) { multiPhotoStatus.textContent = "儲存工作已停止，未產生專案檔。"; showToast("儲存工作已停止"); }
-        else { console.error("儲存工作專案失敗", error); showToast(`儲存工作失敗：${readableError(error)}`); }
-      } finally {
-        finishCancellableOperation();
-        state.multiProcessing = false;
-        setBatchProgress(0, 0);
-        updateButtons();
-        scheduleCanvasMemoryMaintenance();
-      }
-    }
-
-    async function readStoredProjectZip(file) {
-      const bytes = new Uint8Array(await file.arrayBuffer());
-      const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
-      const decoder = new TextDecoder("utf-8");
-      const entries = new Map();
-      let offset = 0;
-      while (offset + 4 <= bytes.length) {
-        const signature = view.getUint32(offset, true);
-        if (signature === 0x02014b50 || signature === 0x06054b50) break;
-        if (signature !== 0x04034b50 || offset + 30 > bytes.length) throw new Error("不是有效的 mk_photo_mask 工作專案檔");
-        const method = view.getUint16(offset + 8, true);
-        const compressedSize = view.getUint32(offset + 18, true);
-        const nameLength = view.getUint16(offset + 26, true);
-        const extraLength = view.getUint16(offset + 28, true);
-        if (method !== 0) throw new Error("此專案檔使用了不支援的壓縮格式");
-        const nameStart = offset + 30;
-        const dataStart = nameStart + nameLength + extraLength;
-        const dataEnd = dataStart + compressedSize;
-        if (dataEnd > bytes.length) throw new Error("工作專案檔內容不完整");
-        const name = decoder.decode(bytes.slice(nameStart, nameStart + nameLength));
-        // 使用原始專案 File 的 slice，避免為每個 ZIP entry 再複製一份完整位元組。
-        entries.set(name, file.slice(dataStart, dataEnd));
-        offset = dataEnd;
-      }
-      return entries;
-    }
-
-    async function restoreProjectPhotoState(item, meta, currentBlob) {
-      if (currentBlob) {
-        const currentFile = new File([currentBlob], `current.${meta.currentMime === "image/webp" ? "webp" : "png"}`, { type: meta.currentMime || currentBlob.type || "image/png" });
-        const currentCanvas = await fileToCanvas(currentFile);
-        if (item.canvas.width !== currentCanvas.width || item.canvas.height !== currentCanvas.height) {
-          item.canvas.width = currentCanvas.width; item.canvas.height = currentCanvas.height;
-          item.overlay.width = currentCanvas.width; item.overlay.height = currentCanvas.height;
-        }
-        item.ctx.clearRect(0, 0, item.canvas.width, item.canvas.height);
-        item.ctx.drawImage(currentCanvas, 0, 0, item.canvas.width, item.canvas.height);
-      }
-      // schema v2 若 currentBlob 為空，代表目前像素與原圖相同；loadMainPhoto/createAdditionalPreview 已載入原圖。
-      item.overlayCtx.clearRect(0, 0, item.overlay.width, item.overlay.height);
-      item.sourceName = meta.sourceName || safeBaseName(meta.fileName || "photo");
-      item.faces = Array.isArray(meta.faces) ? meta.faces.map((face) => ({ ...face })) : [];
-      item.selections = cloneSelections(Array.isArray(meta.selections) ? meta.selections : []);
-      item.selectedFaces = new Set(Array.isArray(meta.selectedFaces) ? meta.selectedFaces : []);
-      item.activeAiFaceIndex = Number.isInteger(meta.activeAiFaceIndex) ? meta.activeAiFaceIndex : -1;
-      item.aiSelectionsCustomized = !!meta.aiSelectionsCustomized;
-      item.detected = !!meta.detected;
-      item.applied = !!meta.applied;
-      item.engine = meta.engine || "";
-      item.manualSelections = cloneSelections(Array.isArray(meta.manualSelections) ? meta.manualSelections : []);
-      item.manualSelection = null;
-      item.activeManualIndex = Number.isInteger(meta.activeManualIndex) ? meta.activeManualIndex : -1;
-      item.history = [];
-      item.redoHistory = [];
-      item.downloaded = !!meta.downloaded;
-      // 專案檔不保存龐大的 ImageData Undo patch；已套用修改改以 untracked 標記保留狀態。
-      item.hasUntrackedEdits = !!meta.hasUntrackedEdits || !!meta.applied;
-      item.outputBlob = null;
-      if (item.statusEl && meta.statusText) item.statusEl.textContent = meta.statusText;
-      if (item.metaEl && meta.metaText) item.metaEl.textContent = meta.metaText;
-      refreshPhotoThumbnail(item);
-    }
-
-    async function loadWorkProject(file) {
-      if (!file || state.multiProcessing || state.autoBackupInProgress) return false;
-      if (state.photoItems.length && state.photoItems.some(isPhotoUnsaved)) {
-        const ok = window.confirm("目前工作區還有尚未輸出的修改。\n\n載入工作專案會取代目前工作區，確定要繼續嗎？");
-        if (!ok) return false;
-      }
-      state.multiProcessing = true; updateButtons();
-      try {
-        const entries = await readStoredProjectZip(file);
-        const manifestBlob = entries.get("manifest.json");
-        if (!manifestBlob) throw new Error("工作專案缺少 manifest.json");
-        const manifest = JSON.parse(await manifestBlob.text());
-        const schemaVersion = Number(manifest?.schemaVersion);
-        if (manifest?.format !== PROJECT_FORMAT || !PROJECT_SUPPORTED_SCHEMA_VERSIONS.has(schemaVersion)) throw new Error("工作專案格式或版本不相容");
-        if (!Array.isArray(manifest.photos) || !manifest.photos.length) throw new Error("工作專案沒有照片資料");
-        manifest.photos.forEach((meta, index) => {
-          if (!entries.has(meta?.originalEntry)) throw new Error(`第 ${index + 1} 張照片原始資料不完整`);
-          if (meta?.currentEntry && !entries.has(meta.currentEntry)) throw new Error(`第 ${index + 1} 張照片處理資料不完整`);
-        });
-
-        clearAdditionalPreviews();
-        setBatchProgress(0, manifest.photos.length, "載入工作");
-        for (let i = 0; i < manifest.photos.length; i++) {
-          const meta = manifest.photos[i] || {};
-          const originalBlob = entries.get(meta.originalEntry);
-          const currentBlob = meta.currentEntry ? entries.get(meta.currentEntry) : null;
-          if (!originalBlob || (meta.currentEntry && !currentBlob)) throw new Error(`第 ${i + 1} 張照片資料不完整`);
-          const originalFile = new File([originalBlob], meta.fileName || `photo-${i + 1}.png`, { type: meta.fileType || "application/octet-stream" });
-          let item;
-          if (i === 0) item = await loadMainPhoto(originalFile);
-          else {
-            const source = await fileToCanvas(originalFile);
-            item = createAdditionalPreview(originalFile, source, i);
-          }
-          state.photoItems.push(item);
-          await restoreProjectPhotoState(item, meta, currentBlob);
-          setBatchProgress(i + 1, manifest.photos.length, "載入工作");
-          await new Promise((resolve) => setTimeout(resolve, 0));
-        }
-
-        if (manifest.settings) { applyUserSettingsSnapshot(manifest.settings); saveUserSettings(); }
-        if (manifest.hasCustomSticker && entries.has("assets/custom-sticker.png")) {
-          state.customSticker = await imageBlobToImage(entries.get("assets/custom-sticker.png"));
-          state.customStickerRevision += 1;
-          stickerStatus.textContent = "已從工作專案恢復自訂貼圖。";
-        }
-
-        state.faceReviewMode = state.photoItems.some((item) => (item.selections || []).length > 0);
-        state.photoFilter = ["all", "original", "detected", "pending", "modified", "unsaved"].includes(manifest.photoFilter) ? manifest.photoFilter : "all";
-        const activeIndex = Math.max(0, Math.min(state.photoItems.length - 1, Number(manifest.activeIndex) || 0));
-        state.activePhotoItem = state.photoItems[activeIndex] || state.photoItems[0];
-        const filteredAfterLoad = getFilteredPhotoItems();
-        if (filteredAfterLoad.length && !filteredAfterLoad.includes(state.activePhotoItem)) state.activePhotoItem = filteredAfterLoad[0];
-        state.history = state.photoItems[0]?.history || [];
-        state.redoHistory = state.photoItems[0]?.redoHistory || [];
-        state.originalImageData = null;
-        updatePhotoItemLabels();
-        renderPhotoNavigator();
-        state.photoItems.forEach((item) => state.faceReviewMode ? drawFaceReview(item) : drawManualSelectionsForItem(item));
-        activatePhotoItem(state.activePhotoItem);
-        updatePhotoFilterUi();
-        updateButtons();
-        photoSummary.textContent = `共 ${state.photoItems.length} 張照片`;
-        multiPhotoStatus.textContent = `已載入工作專案，共 ${state.photoItems.length} 張照片；Undo／Redo 會從本次工作重新開始。`;
-        showToast(`已恢復 ${state.photoItems.length} 張照片的工作進度`);
-        scheduleCanvasMemoryMaintenance();
-        return true;
-      } catch (error) {
-        console.error("載入工作專案失敗", error);
-        resetToEmptyPhotoState();
-        showToast(`載入工作失敗：${readableError(error)}`);
-        return false;
-      } finally {
-        state.multiProcessing = false;
-        setBatchProgress(0, 0);
-        updateButtons();
-      }
-    }
-
-    function openAutoBackupDatabase() {
-      return new Promise((resolve, reject) => {
-        if (!window.indexedDB) { reject(new Error("目前瀏覽器不支援本機自動備份")); return; }
-        const request = indexedDB.open(AUTO_BACKUP_DB_NAME, AUTO_BACKUP_DB_VERSION);
-        request.onupgradeneeded = () => {
-          const db = request.result;
-          if (!db.objectStoreNames.contains(AUTO_BACKUP_STORE)) db.createObjectStore(AUTO_BACKUP_STORE, { keyPath: "id" });
-        };
-        request.onsuccess = () => resolve(request.result);
-        request.onerror = () => reject(request.error || new Error("無法開啟自動備份資料庫"));
-      });
-    }
-
-    async function readAutoBackupRecord() {
-      const db = await openAutoBackupDatabase();
-      try {
-        return await new Promise((resolve, reject) => {
-          const tx = db.transaction(AUTO_BACKUP_STORE, "readonly");
-          const request = tx.objectStore(AUTO_BACKUP_STORE).get(AUTO_BACKUP_KEY);
-          request.onsuccess = () => resolve(request.result || null);
-          request.onerror = () => reject(request.error || new Error("讀取自動備份失敗"));
-        });
-      } finally { db.close(); }
-    }
-
-    async function writeAutoBackupRecord(record) {
-      const db = await openAutoBackupDatabase();
-      try {
-        await new Promise((resolve, reject) => {
-          const tx = db.transaction(AUTO_BACKUP_STORE, "readwrite");
-          tx.objectStore(AUTO_BACKUP_STORE).put(record);
-          tx.oncomplete = () => resolve();
-          tx.onerror = () => reject(tx.error || new Error("寫入自動備份失敗"));
-          tx.onabort = () => reject(tx.error || new Error("自動備份已中止"));
-        });
-      } finally { db.close(); }
-    }
-
-    async function deleteAutoBackupRecord() {
-      const db = await openAutoBackupDatabase();
-      try {
-        await new Promise((resolve, reject) => {
-          const tx = db.transaction(AUTO_BACKUP_STORE, "readwrite");
-          tx.objectStore(AUTO_BACKUP_STORE).delete(AUTO_BACKUP_KEY);
-          tx.oncomplete = () => resolve();
-          tx.onerror = () => reject(tx.error || new Error("清除自動備份失敗"));
-        });
-      } finally { db.close(); }
-    }
-
-    function formatAutoBackupTime(timestamp) {
-      if (!timestamp) return "";
-      try {
-        return new Intl.DateTimeFormat("zh-TW", { month:"2-digit", day:"2-digit", hour:"2-digit", minute:"2-digit", hour12:false }).format(new Date(timestamp));
-      } catch (_) { return new Date(timestamp).toLocaleString(); }
-    }
-
-    function setAutoBackupStatus(message, kind = "idle") {
-      if (!autoBackupStatus) return;
-      autoBackupStatus.textContent = message;
-      autoBackupStatus.dataset.kind = kind;
-    }
-
-    function formatByteSize(bytes) {
-      const value = Number(bytes || 0);
-      if (!value) return "0 MB";
-      if (value < 1024 * 1024) return `${Math.max(1, Math.round(value / 1024))} KB`;
-      return `${(value / (1024 * 1024)).toFixed(value >= 100 * 1024 * 1024 ? 0 : 1)} MB`;
-    }
-
-    async function refreshBackupStorageInfo() {
-      if (!backupStorageInfo) return;
-      const backupText = state.autoBackupSizeBytes ? `最近備份 ${formatByteSize(state.autoBackupSizeBytes)}` : "尚無本機備份";
-      try {
-        if (!navigator.storage?.estimate) { backupStorageInfo.textContent = `備份容量：${backupText}`; return; }
-        const estimate = await navigator.storage.estimate();
-        const usage = Number(estimate.usage || 0);
-        const quota = Number(estimate.quota || 0);
-        if (!quota) { backupStorageInfo.textContent = `備份容量：${backupText}`; return; }
-        const ratio = quota ? usage / quota : 0;
-        const percent = Math.min(100, Math.round(ratio * 100));
-        backupStorageInfo.dataset.level = ratio >= BACKUP_STORAGE_DANGER_RATIO ? "danger" : ratio >= BACKUP_STORAGE_WARN_RATIO ? "warn" : "ok";
-        const warning = ratio >= BACKUP_STORAGE_DANGER_RATIO ? "｜⚠ 空間接近上限" : ratio >= BACKUP_STORAGE_WARN_RATIO ? "｜空間使用偏高" : "";
-        backupStorageInfo.textContent = `備份容量：${backupText}｜本站儲存 ${formatByteSize(usage)} / ${formatByteSize(quota)}（${percent}%）${warning}`;
-      } catch (_) {
-        backupStorageInfo.textContent = `備份容量：${backupText}`;
-      }
-    }
-
-    function roundSelectionForFingerprint(selection) {
-      if (!selection) return null;
-      return [Math.round(selection.x || 0), Math.round(selection.y || 0), Math.round(selection.width || 0), Math.round(selection.height || 0), selection.shape || "rect"];
-    }
-
-    function getWorkspaceBackupFingerprint() {
-      const photos = state.photoItems.map((item) => ({
-        f: getPhotoFileSignature(item.file),
-        d: !!item.detected,
-        a: !!item.applied,
-        e: item.engine || "",
-        o: !!item.downloaded,
-        u: !!item.hasUntrackedEdits,
-        h: getHistoryForItem(item).length,
-        r: getRedoHistoryForItem(item).length,
-        sf: [...(item.selectedFaces || [])].sort((a,b)=>a-b),
-        ai: (item.selections || []).map(roundSelectionForFingerprint),
-        m: ensureManualSelections(item).map(roundSelectionForFingerprint)
-      }));
-      return JSON.stringify({
-        p: photos,
-        active: Math.max(0, state.photoItems.indexOf(getActivePhotoItem())),
-        filter: state.photoFilter || "all",
-        faceReview: !!state.faceReviewMode,
-        settings: getUserSettingsSnapshot(),
-        sticker: state.customStickerRevision
-      });
-    }
-
-    async function refreshAutoBackupAvailability() {
-      try {
-        const record = await readAutoBackupRecord();
-        state.autoBackupAvailable = !!record?.blob;
-        state.autoBackupSizeBytes = Number(record?.blob?.size || 0);
-        state.autoBackupLastSavedAt = Number(record?.savedAt || 0);
-        state.autoBackupLastFingerprint = String(record?.fingerprint || "");
-        state.autoBackupError = "";
-        if (state.autoBackupAvailable) {
-          const prefix = autoBackupEnabled?.checked ? "自動備份" : "備份已保留";
-          setAutoBackupStatus(`${prefix}：${formatAutoBackupTime(state.autoBackupLastSavedAt)}`, "ok");
-        } else {
-          setAutoBackupStatus(autoBackupEnabled?.checked ? "自動備份：等待工作變更" : "自動備份：已停用", "idle");
-        }
-      } catch (error) {
-        state.autoBackupAvailable = false;
-        state.autoBackupSizeBytes = 0;
-        state.autoBackupError = readableError(error);
-        setAutoBackupStatus("自動備份無法使用", "error");
-        if (autoBackupEnabled) autoBackupEnabled.checked = false;
-      }
-      refreshBackupStorageInfo();
-      updateButtons();
-    }
-
-    function hasWorkspaceWorkToBackup() {
-      if (state.customSticker) return true;
-      return state.photoItems.some((item) =>
-        !!item.detected || !!item.applied || !!item.hasUntrackedEdits ||
-        (item.selectedFaces?.size || 0) > 0 ||
-        (item.selections?.length || 0) > 0 ||
-        ensureManualSelections(item).length > 0 ||
-        getHistoryForItem(item).length > 0 || getRedoHistoryForItem(item).length > 0
-      );
-    }
-
-    async function runAutoBackup({ force = false, allowDisabled = false } = {}) {
-      if ((!autoBackupEnabled?.checked && !allowDisabled) || !state.photoItems.length || state.autoBackupInProgress || state.multiProcessing || state.faceDetecting || state.applyInProgress) return false;
-      if (!force && !hasWorkspaceWorkToBackup()) return false;
-      const now = Date.now();
-      if (!force && now - state.lastUserActivityAt < AUTO_BACKUP_IDLE_MS) return false;
-      if (!force && state.autoBackupLastSavedAt && now - state.autoBackupLastSavedAt < AUTO_BACKUP_MIN_INTERVAL_MS) return false;
-      const fingerprint = getWorkspaceBackupFingerprint();
-      if (!force && fingerprint === state.autoBackupLastFingerprint) return false;
-
-      try {
-        if (navigator.storage?.estimate) {
-          const estimate = await navigator.storage.estimate();
-          const usage = Number(estimate.usage || 0), quota = Number(estimate.quota || 0);
-          if (!force && quota && usage / quota >= BACKUP_STORAGE_DANGER_RATIO) {
-            setAutoBackupStatus("備份空間接近上限，請先清理", "error");
-            refreshBackupStorageInfo();
-            return false;
-          }
-        }
-      } catch (_) {}
-      state.autoBackupInProgress = true;
-      setAutoBackupStatus("自動備份中…", "busy");
-      updateButtons();
-      try {
-        const { projectBlob } = await buildWorkProjectPackage({ createdAt: new Date(now).toISOString() });
-        await writeAutoBackupRecord({
-          id: AUTO_BACKUP_KEY,
-          blob: projectBlob,
-          savedAt: now,
-          fingerprint,
-          photoCount: state.photoItems.length,
-          appVersion: "4.3"
-        });
-        state.autoBackupAvailable = true;
-        state.autoBackupSizeBytes = Number(projectBlob.size || 0);
-        state.autoBackupLastSavedAt = now;
-        state.autoBackupLastFingerprint = fingerprint;
-        state.autoBackupError = "";
-        setAutoBackupStatus(`${force && allowDisabled ? "立即備份" : "自動備份"}：${formatAutoBackupTime(now)}`, "ok");
-        refreshBackupStorageInfo();
-        return true;
-      } catch (error) {
-        state.autoBackupError = readableError(error);
-        console.warn("自動備份失敗", error);
-        if (error?.name === "QuotaExceededError") {
-          if (autoBackupEnabled) autoBackupEnabled.checked = false;
-          localStorage.setItem(AUTO_BACKUP_ENABLED_KEY, "0");
-          setAutoBackupStatus("備份空間不足，已停用", "error");
-        } else {
-          setAutoBackupStatus("自動備份失敗", "error");
-        }
-        refreshBackupStorageInfo();
-        return false;
-      } finally {
-        state.autoBackupInProgress = false;
-        updateButtons();
-        scheduleCanvasMemoryMaintenance();
-      }
-    }
-
-    async function restoreLatestAutoBackup() {
-      if (state.autoBackupInProgress || state.multiProcessing || state.faceDetecting) return;
-      try {
-        const record = await readAutoBackupRecord();
-        if (!record?.blob) { state.autoBackupAvailable = false; updateButtons(); showToast("目前沒有可恢復的自動備份"); return; }
-        const backupFile = new File([record.blob], `mk_photo_mask-auto-backup-${record.savedAt || Date.now()}.mkpm`, { type:"application/zip" });
-        const restored = await loadWorkProject(backupFile);
-        if (restored) {
-          state.autoBackupAvailable = true;
-          state.autoBackupSizeBytes = Number(record.blob?.size || 0);
-          state.autoBackupLastSavedAt = Number(record.savedAt || Date.now());
-          state.autoBackupLastFingerprint = getWorkspaceBackupFingerprint();
-          setAutoBackupStatus(`已恢復：${formatAutoBackupTime(state.autoBackupLastSavedAt)}`, "ok");
-          refreshBackupStorageInfo();
-          multiPhotoStatus.textContent = `已從本機自動備份恢復 ${state.photoItems.length} 張照片。`;
-          showToast("已從本機自動備份恢復工作");
-        }
-      } catch (error) {
-        console.error("恢復自動備份失敗", error);
-        showToast(`恢復備份失敗：${readableError(error)}`);
-      } finally { updateButtons(); }
-    }
-
-    async function clearLatestAutoBackup() {
-      if (!state.autoBackupAvailable || state.autoBackupInProgress) return;
-      if (!window.confirm("確定要清理本機備份空間嗎？\n\n只會刪除瀏覽器中的復原備份，不會影響目前工作區與電腦中的原始照片。")) return;
-      try {
-        await deleteAutoBackupRecord();
-        state.autoBackupAvailable = false;
-        state.autoBackupSizeBytes = 0;
-        state.autoBackupLastSavedAt = 0;
-        state.autoBackupLastFingerprint = "";
-        setAutoBackupStatus(autoBackupEnabled?.checked ? "自動備份：等待工作變更" : "自動備份：已停用", "idle");
-        refreshBackupStorageInfo();
-        showToast("本機備份空間已清理");
-      } catch (error) {
-        showToast(`清除備份失敗：${readableError(error)}`);
-      } finally { updateButtons(); }
-    }
-
-    function initializeAutoBackup() {
-      const saved = localStorage.getItem(AUTO_BACKUP_ENABLED_KEY);
-      if (autoBackupEnabled) autoBackupEnabled.checked = saved !== "0";
-      ["pointerdown", "keydown", "input", "change"].forEach((eventName) => {
-        document.addEventListener(eventName, () => { state.lastUserActivityAt = Date.now(); }, { capture:true, passive:true });
-      });
-      autoBackupEnabled?.addEventListener("change", () => {
-        localStorage.setItem(AUTO_BACKUP_ENABLED_KEY, autoBackupEnabled.checked ? "1" : "0");
-        state.lastUserActivityAt = Date.now();
-        if (autoBackupEnabled.checked) {
-          setAutoBackupStatus(state.autoBackupAvailable ? `自動備份：${formatAutoBackupTime(state.autoBackupLastSavedAt)}` : "自動備份：等待工作變更", state.autoBackupAvailable ? "ok" : "idle");
-        } else {
-          setAutoBackupStatus(state.autoBackupAvailable ? `備份已保留：${formatAutoBackupTime(state.autoBackupLastSavedAt)}` : "自動備份：已停用", state.autoBackupAvailable ? "ok" : "idle");
-        }
-      });
-      restoreAutoBackupBtn?.addEventListener("click", restoreLatestAutoBackup);
-      clearAutoBackupBtn?.addEventListener("click", clearLatestAutoBackup);
-      backupNowBtn?.addEventListener("click", async () => {
-        if (!state.photoItems.length || state.autoBackupInProgress || state.multiProcessing || state.faceDetecting) return;
-        const ok = await runAutoBackup({ force:true, allowDisabled:true });
-        if (ok) { multiPhotoStatus.textContent = `已立即建立本機恢復備份，共 ${state.photoItems.length} 張照片。`; showToast("本機備份已更新"); }
-      });
-      refreshAutoBackupAvailability();
-      setInterval(() => { runAutoBackup().catch((error) => console.warn("自動備份排程失敗", error)); }, AUTO_BACKUP_CHECK_MS);
-    }
-
-    initializeAutoBackup();
-
-    saveProjectBtn?.addEventListener("click", saveWorkProject);
-    loadProjectBtn?.addEventListener("click", () => projectFileInput?.click());
-    projectFileInput?.addEventListener("change", async (event) => {
-      const file = event.target.files?.[0];
-      event.target.value = "";
-      if (file) await loadWorkProject(file);
-    });
+    // V4.4：工作專案、載入工作與所有本機備份機制已完整移除。
     downloadAllZipBtn.addEventListener("click", async () => {
       if (!state.photoItems.length) return;
       state.multiProcessing = true;

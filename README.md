@@ -1,6 +1,9 @@
-# mk_photo_mask V4.3
+# mk_photo_mask V4.4
 
 Windows completely-offline photo privacy masking tool for schools and local use.
+
+
+> V4.4：工作專案與備份功能已移除；程式不再建立或載入 `.mkpm`，也不再建立瀏覽器自動備份。
 
 ## Main features
 
@@ -12,8 +15,6 @@ Windows completely-offline photo privacy masking tool for schools and local use.
 - Multiple photos, filtering, batch actions and ZIP download
 - Undo / Redo
 - Per-photo reset and close
-- `.mkpm` work-project save / restore
-- Local automatic backup
 - Canvas memory optimization for large photo sets
 - Windows single-EXE build workflow
 - GitHub Actions build + Code Signing + GitHub Release verification workflow
@@ -30,7 +31,7 @@ Run:
 .\build-windows-singlefile.ps1
 ```
 
-The default output is `mk_photo_mask_v4.3.exe`.
+The default output is `mk_photo_mask_v4.4.exe`.
 
 ## Code signing
 

@@ -1,0 +1,17 @@
+mk_photo_mask V4.4 Publisher Hotfix 2
+
+Fixes GitHub push rejection: "main -> main (fetch first)".
+
+Cause:
+- The GitHub repository already contains an earlier V4.3 commit.
+- The V4.4 folder was initialized as a new local Git repository with a separate root commit.
+- A normal push is therefore rejected as non-fast-forward.
+
+Fix:
+- Fetch origin/main first.
+- If the remote history is not an ancestor of the local commit, create a local safety branch.
+- Soft-reset HEAD to origin/main while keeping the exact current V4.4 staged snapshot.
+- Create a new V4.4 commit on top of the existing remote history.
+- Push normally without force-push.
+
+This preserves the existing GitHub history and avoids destructive force updates.

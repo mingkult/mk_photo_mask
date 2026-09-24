@@ -1,0 +1,17 @@
+mk_photo_mask V4.4 - GitHub Publisher Hotfix 1
+
+Fixes a Windows PowerShell 5.1 failure when the GitHub repository already exists
+but the freshly initialized local repository does not yet have an `origin` remote.
+
+Previous behavior:
+- `git remote get-url origin` emitted `No such remote 'origin'`.
+- With `$ErrorActionPreference = 'Stop'`, Windows PowerShell 5.1 could treat that
+  stderr output as a terminating error before the script had a chance to add origin.
+
+New behavior:
+- Run `git remote` first.
+- If `origin` is absent, add it normally.
+- If `origin` exists, verify/update its URL.
+- Check every remote mutation return code explicitly.
+
+This hotfix does not change application features or the V4.4 source contents.

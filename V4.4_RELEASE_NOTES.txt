@@ -1,0 +1,8 @@
+mk_photo_mask V4.4
+
+- Removed all automatic backup behavior and scheduling.
+- Removed manual backup, restore-backup, and backup-space controls.
+- Removed Save Work / Load Work and .mkpm project persistence.
+- Removed work-project image snapshot format selection and PNG/WebP project snapshots.
+- On first V4.4 launch, legacy mk_photo_mask recovery IndexedDB data is requested for deletion and the old auto-backup preference key is cleared.
+- Preserved normal photo import/preview, AI detection, manual masking, Undo/Redo, Canvas memory optimization, batch management, PNG/ZIP download, dlib Lite, GitHub build and Code Signing flows.

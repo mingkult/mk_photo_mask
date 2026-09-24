@@ -1,0 +1,7 @@
+V4.4
+- Removed auto backup completely.
+- Removed backup recovery/cleanup/manual backup controls and code.
+- Removed Save Work, Load Work, .mkpm parsing/building, and project snapshot encoding.
+- Removed work-project image format preference.
+- Added one-time cleanup for legacy backup database/settings.
+- Kept all photo editing, AI, batch, Canvas memory and download features.

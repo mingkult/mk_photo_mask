@@ -1,5 +1,5 @@
 $ErrorActionPreference = "Stop"
-$Host.UI.RawUI.WindowTitle = "照片隱私遮蔽工具｜AI 完全離線單檔版 v4.3"
+$Host.UI.RawUI.WindowTitle = "照片隱私遮蔽工具｜AI 完全離線單檔版 v4.4"
 
 $Root = [System.IO.Path]::GetFullPath((Split-Path -Parent $MyInvocation.MyCommand.Path))
 $RootPrefix = $Root.TrimEnd([System.IO.Path]::DirectorySeparatorChar) + [System.IO.Path]::DirectorySeparatorChar
@@ -171,7 +171,7 @@ function Start-AdvancedHelperFromRuntime {
     return $false
 }
 
-# V4.3 optional dlib Lite helper. Prefer bundled runtime, then helper EXE.
+# V4.4 optional dlib Lite helper. Prefer bundled runtime, then helper EXE.
 if (-not (Test-AdvancedHelper)) {
     $Started = $false
     if ([System.IO.Directory]::Exists($AdvancedRuntimeDir)) { $Started = Start-AdvancedHelperFromRuntime }
@@ -180,11 +180,11 @@ if (-not (Test-AdvancedHelper)) {
 
 Clear-Host
 Write-Host "================================================" -ForegroundColor Cyan
-Write-Host " 照片隱私遮蔽工具｜AI 完全離線單檔版 v4.3" -ForegroundColor White
+Write-Host " 照片隱私遮蔽工具｜AI 完全離線單檔版 v4.4" -ForegroundColor White
 Write-Host "================================================" -ForegroundColor Cyan
 Write-Host ""
 Write-Host "本機服務已啟動：$Url" -ForegroundColor Green
-Write-Host "v4.3 優先使用 MediaPipe Tasks Vision 1.0.1（若已安裝），並保留 Legacy MediaPipe 與 FaceAPI 備援。"
+Write-Host "v4.4 優先使用 MediaPipe Tasks Vision 1.0.1（若已安裝），並保留 Legacy MediaPipe 與 FaceAPI 備援。"
 Write-Host "請保留此黑色視窗；關閉後服務立即停止。" -ForegroundColor Yellow
 Write-Host ""
 

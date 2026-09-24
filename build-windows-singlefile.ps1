@@ -1,5 +1,5 @@
 param(
-    [string]$Version = "4.3",
+    [string]$Version = "4.4",
     [string]$SignPfxPath = "",
     [string]$SignPfxPassword = "",
     [string]$SignThumbprint = "",

@@ -1,0 +1,8 @@
+mk_photo_mask V4.3 Hotfix 5
+
+- 修正上傳照片後主預覽可能不顯示的回歸問題。
+- 首張照片建立後會先明確指定 activePhotoItem，再清理選取狀態，避免沿用舊照片狀態。
+- 上傳後強制恢復主 Canvas / Overlay 的可見狀態，並隱藏 parked preview。
+- 首張照片至少完成一個瀏覽器繪製週期後，才排程 Canvas 記憶體維護。
+- 新增額外照片 Canvas 的明確可見狀態，避免被先前 parked 狀態/CSS 殘留影響。
+- 保留 V4.3 原有 AI、Canvas 延遲釋放、工作專案、備份、發布與簽章流程。

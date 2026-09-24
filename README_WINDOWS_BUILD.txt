@@ -1,4 +1,4 @@
-Photo Privacy Tool | Windows single-file build V4.3
+Photo Privacy Tool | Windows single-file build V4.4
 ===================================================
 
 This build path creates a Windows x64 portable EXE with an ASCII filename for maximum CMD/PowerShell compatibility.
@@ -10,7 +10,7 @@ Build steps
 3. The build script removes stale *.exe files from output/ first.
 4. Default output:
 
-   output\mk_photo_mask_v4.3.exe
+   output\mk_photo_mask_v4.4.exe
 
 Requirements
 ------------
@@ -22,7 +22,7 @@ Requirements
 
 Unsigned local/test build
 -------------------------
-powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File ".\build-windows-singlefile.ps1" -Version "4.3" -SkipSigning
+powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File ".\build-windows-singlefile.ps1" -Version "4.4" -SkipSigning
 
 Signed release build
 --------------------
@@ -32,11 +32,11 @@ First check the signing environment:
 
 Then build with signing required:
 
-  .\build-windows-singlefile.ps1 -Version "4.3" -SignPfxPath ".\codesign.pfx" -SignPfxPassword "your-password" -RequireSigning
+  .\build-windows-singlefile.ps1 -Version "4.4" -SignPfxPath ".\codesign.pfx" -SignPfxPassword "your-password" -RequireSigning
 
 Use release-guard.ps1 before official distribution:
 
-  .\release-guard.ps1 -ExePath ".\output\mk_photo_mask_v4.3.exe" -RequireValidSignature
+  .\release-guard.ps1 -ExePath ".\output\mk_photo_mask_v4.4.exe" -RequireValidSignature
 
 GitHub Actions
 --------------
@@ -54,16 +54,14 @@ For the optional dlib Lite second pass:
 3. The helper binds only to 127.0.0.1:8777.
 4. Run the normal build again.
 
-V4.3 highlights
+V4.4 highlights
 ---------------
-- Dynamic Canvas retention: keep only the active photo and nearby +/-1~2 photos fully decoded.
-- Main photo Canvas can also be parked when it is far from the active photo.
-- Parked photos aggressively trim older Undo/Redo patches to reduce RAM.
-- Group-photo AI uses dual-scale overlapping tiles plus a limited FaceAPI second-model pass.
-- .mkpm schema v4 can automatically compare PNG and high-quality WebP per modified photo and keep the smaller snapshot.
-- Formal release workflow includes signing readiness checks, -RequireSigning, and release-guard verification.
+- Removed all automatic backup, backup restore/cleanup, and manual backup controls.
+- Removed Save Work / Load Work and all .mkpm project persistence.
+- Removed work-project image snapshot format selection and PNG/WebP project snapshot generation.
+- Keeps dynamic Canvas retention, group-photo AI enhancement, Undo/Redo, batch management, PNG/ZIP output, and signed GitHub Release workflow.
 
-V4.3 signed GitHub Release:
+V4.4 signed GitHub Release:
 - See SIGNING_GUIDE.md and CODE_SIGNING_CHECKLIST.md.
-- Official v4.3 tags require valid signing secrets.
+- Official v4.4 tags require valid signing secrets.
 - Workflow creates GitHub Release and re-verifies published assets.

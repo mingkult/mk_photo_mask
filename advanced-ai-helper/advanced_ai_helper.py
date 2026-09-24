@@ -65,7 +65,7 @@ class Handler(BaseHTTPRequestHandler):
             self._send(200, {
                 "ok": True,
                 "service": "mk_photo_mask advanced-ai-helper",
-                "version": "3.5",
+                "version": "4.4",
                 "dlib_version": getattr(dlib, "__version__", "unknown"),
                 "model": "dlib Lite HOG",
                 "runtime": "builtin-runtime or helper-exe",
