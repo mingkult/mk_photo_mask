@@ -1,6 +1,6 @@
-# mk_photo_mask V4.3 Windows 正式發布與簽章
+# mk_photo_mask V4.6 Windows 正式發布與簽章
 
-V4.3 將「建置、簽章、驗證、GitHub Release、發布後再次驗證」串成同一條正式發布流程。
+V4.6 將「建置、簽章、驗證、GitHub Release、發布後再次驗證」串成同一條正式發布流程。
 
 ## 1. 正式憑證必要條件
 
@@ -35,7 +35,7 @@ V4.3 將「建置、簽章、驗證、GitHub Release、發布後再次驗證」�
 然後：
 
 ```powershell
-.\release-guard.ps1 -ExePath '.\output\mk_photo_mask_v4.3.exe' -RequireValidSignature -RequireTimestamp
+.\release-guard.ps1 -ExePath '.\output\mk_photo_mask_v4.6.exe' -RequireValidSignature -RequireTimestamp
 ```
 
 ## 4. GitHub 正式 Release
@@ -43,8 +43,8 @@ V4.3 將「建置、簽章、驗證、GitHub Release、發布後再次驗證」�
 推送正式 Tag：
 
 ```powershell
-git tag v4.3
-git push origin v4.3
+git tag v4.6
+git push origin v4.6
 ```
 
 `.github/workflows/build-windows.yml` 會自動：

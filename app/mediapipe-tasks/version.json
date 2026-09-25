@@ -1,0 +1,7 @@
+﻿{
+    "component":  "@mediapipe/tasks-vision",
+    "version":  "1.0.1",
+    "installed_at":  "2026-09-25T08:09:09",
+    "source":  "https://www.npmjs.com/package/@mediapipe/tasks-vision",
+    "mode":  "offline-local-assets"
+}

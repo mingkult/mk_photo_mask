@@ -1,0 +1,6 @@
+mk_photo_mask V4.5
+
+- 修正 Windows Chromium/Edge 選擇照片後無法進入預覽的問題。
+- 原因：file input 的 FileList 可能為 live object；舊程式先清空 input 再使用 FileList，導致 files.length 變成 0。
+- 改為先 Array.from() 建立獨立照片陣列，再清空 input，確保單張、多張與重複選擇同一檔名都能正常載入。
+- 保留 V4.4 已移除工作專案與所有自動備份機制的設計。

@@ -177,7 +177,7 @@ function Ensure-PublishingTools {
 }
 
 Write-Host "============================================================"
-Write-Host " mk_photo_mask V4.4 - GitHub Publisher"
+Write-Host " mk_photo_mask V4.6 - GitHub Publisher"
 Write-Host " Repository: $Repository"
 Write-Host "============================================================"
 Write-Host ""
@@ -234,13 +234,13 @@ $gitEmail = (& git config --get user.email 2>$null)
 if (-not $gitName) { & git config user.name "mingkult" }
 if (-not $gitEmail) { & git config user.email "62247322+mingkult@users.noreply.github.com" }
 
-Write-Host "[5/8] Staging V4.4 source..."
+Write-Host "[5/8] Staging V4.6 source..."
 & git add -A
 if ($LASTEXITCODE -ne 0) { throw "git add failed." }
 
 & git diff --cached --quiet
 if ($LASTEXITCODE -ne 0) {
-  & git commit -m "Publish mk_photo_mask V4.4"
+  & git commit -m "Publish mk_photo_mask V4.6"
   if ($LASTEXITCODE -ne 0) { throw "git commit failed." }
 } else {
   Write-Host "No new files to commit."
@@ -286,7 +286,7 @@ if ($LASTEXITCODE -ne 0) { throw "git branch rename failed." }
 # The remote repository may already contain an earlier published version (for
 # example V4.3) while this local folder was initialized as a brand-new Git
 # repository. In that case a normal push is rejected as non-fast-forward.
-# Preserve the remote history and place the current V4.4 snapshot on top of it
+# Preserve the remote history and place the current V4.6 snapshot on top of it
 # instead of force-pushing and erasing the existing GitHub history.
 $oldErrorActionPreference = $ErrorActionPreference
 $ErrorActionPreference = "Continue"
@@ -311,28 +311,28 @@ if ($remoteBranchExists) {
 
   if (-not $remoteIsAncestor) {
     Write-Host "Remote $Branch already has history that is not in this local repository."
-    Write-Host "Preserving the remote history and rebuilding the V4.4 snapshot on top of it..."
+    Write-Host "Preserving the remote history and rebuilding the V4.6 snapshot on top of it..."
 
-    $backupBranch = "local-v4.4-before-sync-" + (Get-Date -Format "yyyyMMdd-HHmmss")
+    $backupBranch = "local-v4.6-before-sync-" + (Get-Date -Format "yyyyMMdd-HHmmss")
     & git branch $backupBranch HEAD
     if ($LASTEXITCODE -ne 0) { throw "Could not create local safety branch before synchronization." }
     Write-Host "Local safety branch created: $backupBranch"
 
-    # Move HEAD to the remote commit but keep the current V4.4 index and
+    # Move HEAD to the remote commit but keep the current V4.6 index and
     # working tree. The next commit therefore becomes a normal child of the
-    # existing GitHub history while retaining the exact V4.4 files.
+    # existing GitHub history while retaining the exact V4.6 files.
     & git reset --soft "origin/$Branch"
     if ($LASTEXITCODE -ne 0) { throw "git reset --soft to origin/$Branch failed." }
 
     & git diff --cached --quiet
     if ($LASTEXITCODE -ne 0) {
-      & git commit -m "Publish mk_photo_mask V4.4"
+      & git commit -m "Publish mk_photo_mask V4.6"
       if ($LASTEXITCODE -ne 0) { throw "git commit after remote synchronization failed." }
     } else {
       Write-Host "Remote repository already has the same file snapshot; no new commit is required."
     }
   } else {
-    Write-Host "Remote history is already an ancestor of the local V4.4 commit."
+    Write-Host "Remote history is already an ancestor of the local V4.6 commit."
   }
 }
 
@@ -347,4 +347,4 @@ Write-Host ""
 Write-Host "Next step for signed releases:"
 Write-Host "  1. Obtain a trusted Code Signing certificate."
 Write-Host "  2. Run prepare-github-signing-secrets.ps1 locally."
-Write-Host "  3. Push tag v4.4 to trigger the signed Windows Release workflow."
+Write-Host "  3. Push tag v4.6 to trigger the signed Windows Release workflow."

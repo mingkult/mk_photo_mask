@@ -1,4 +1,4 @@
-Photo Privacy Tool | Windows single-file build V4.4
+Photo Privacy Tool | Windows single-file build V4.6
 ===================================================
 
 This build path creates a Windows x64 portable EXE with an ASCII filename for maximum CMD/PowerShell compatibility.
@@ -10,7 +10,7 @@ Build steps
 3. The build script removes stale *.exe files from output/ first.
 4. Default output:
 
-   output\mk_photo_mask_v4.4.exe
+   output\mk_photo_mask_v4.6.exe
 
 Requirements
 ------------
@@ -22,7 +22,7 @@ Requirements
 
 Unsigned local/test build
 -------------------------
-powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File ".\build-windows-singlefile.ps1" -Version "4.4" -SkipSigning
+powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File ".\build-windows-singlefile.ps1" -Version "4.6" -SkipSigning
 
 Signed release build
 --------------------
@@ -32,11 +32,11 @@ First check the signing environment:
 
 Then build with signing required:
 
-  .\build-windows-singlefile.ps1 -Version "4.4" -SignPfxPath ".\codesign.pfx" -SignPfxPassword "your-password" -RequireSigning
+  .\build-windows-singlefile.ps1 -Version "4.6" -SignPfxPath ".\codesign.pfx" -SignPfxPassword "your-password" -RequireSigning
 
 Use release-guard.ps1 before official distribution:
 
-  .\release-guard.ps1 -ExePath ".\output\mk_photo_mask_v4.4.exe" -RequireValidSignature
+  .\release-guard.ps1 -ExePath ".\output\mk_photo_mask_v4.6.exe" -RequireValidSignature
 
 GitHub Actions
 --------------
@@ -54,14 +54,14 @@ For the optional dlib Lite second pass:
 3. The helper binds only to 127.0.0.1:8777.
 4. Run the normal build again.
 
-V4.4 highlights
+V4.6 highlights
 ---------------
 - Removed all automatic backup, backup restore/cleanup, and manual backup controls.
 - Removed Save Work / Load Work and all .mkpm project persistence.
 - Removed work-project image snapshot format selection and PNG/WebP project snapshot generation.
 - Keeps dynamic Canvas retention, group-photo AI enhancement, Undo/Redo, batch management, PNG/ZIP output, and signed GitHub Release workflow.
 
-V4.4 signed GitHub Release:
+V4.6 signed GitHub Release:
 - See SIGNING_GUIDE.md and CODE_SIGNING_CHECKLIST.md.
-- Official v4.4 tags require valid signing secrets.
+- Official v4.6 tags require valid signing secrets.
 - Workflow creates GitHub Release and re-verifies published assets.

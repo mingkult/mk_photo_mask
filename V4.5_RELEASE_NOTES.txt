@@ -1,0 +1,5 @@
+mk_photo_mask V4.5
+
+Preview loading reliability release.
+
+Fixes a Windows Chromium/Edge issue where choosing photos could leave the UI at the empty state. The file input handler now snapshots the selected FileList before resetting the input value.

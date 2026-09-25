@@ -6,7 +6,7 @@
   <meta name="color-scheme" content="light" />
   <link rel="icon" type="image/x-icon" href="./icon.ico" />
   <link rel="shortcut icon" type="image/x-icon" href="./icon.ico" />
-  <title>照片隱私遮蔽工具｜AI 完全離線可攜版 v4.4</title>
+  <title>照片隱私遮蔽工具｜AI 完全離線可攜版 v4.6</title>
 
   <style>
     /* =========================================================
@@ -848,7 +848,7 @@
     .ai-status[data-type="error"]{border-color:#fca5a5;background:#fef2f2}.ai-status[data-type="error"] b{color:#b91c1c}
     .ai-check-btn{width:100%;margin-top:10px}
 
-    /* v4.4 多照片統一上傳 / 預覽 / AI 複核 */
+    /* v4.6 多照片統一上傳 / 預覽 / AI 複核 */
     .photo-summary{margin-top:12px;padding:12px 13px;border:1px solid rgba(99,102,241,.2);border-radius:16px;background:rgba(255,255,255,.72);color:#475569;font-size:12px;line-height:1.6}
     .photo-summary-row{display:flex;align-items:center;justify-content:space-between;gap:10px}.photo-summary-row b{color:#4338ca}.photo-summary .mini-btn{border:0;border-radius:9px;padding:6px 9px;background:#eef2ff;color:#4f46e5;font-weight:850;cursor:pointer}.photo-summary .mini-btn:disabled{opacity:.45;cursor:not-allowed}
     .ai-review-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:9px}.ai-review-actions .btn{min-height:40px}.ai-review-tools{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}.ai-review-tools button{border:1px solid #c7d2fe;border-radius:999px;padding:6px 9px;background:#fff;color:#4f46e5;font-size:11px;font-weight:850;cursor:pointer}.ai-review-tools button:disabled{opacity:.45;cursor:not-allowed}
@@ -867,7 +867,7 @@
     .ai-progress{height:8px;overflow:hidden;margin:10px 0 6px;border-radius:999px;background:#e2e8f0}.ai-progress>span{display:block;width:0;height:100%;background:linear-gradient(90deg,#6366f1,#ec4899);transition:width .2s}
     @media(max-width:460px){.ai-review-actions{grid-template-columns:1fr}.photo-summary-row{align-items:flex-start;flex-direction:column}}
   
-    /* v4.4 workflow UI: AI first, manual touch-up second, download last */
+    /* v4.6 workflow UI: AI first, manual touch-up second, download last */
     .prep-title {
       display:flex; align-items:center; gap:10px; margin:0 0 12px; font-size:17px; font-weight:950;
     }
@@ -917,7 +917,7 @@
     .compact-check { margin-top:9px; min-height:38px !important; font-size:12px !important; }
 
   
-    /* v4.4 unified mask apply */
+    /* v4.6 unified mask apply */
     #downloadAllZipBtn{
       min-height:52px;
       padding:11px 16px;
@@ -1014,7 +1014,7 @@
 
   <style>
     /* =========================================================
-       V4.4 UI polish refresh：藍紫青三色、卡片層次、視覺聚焦
+       V4.6 UI polish refresh：藍紫青三色、卡片層次、視覺聚焦
        ========================================================= */
     :root {
       --paper: rgba(255,255,255,.82);
@@ -1637,7 +1637,7 @@
 </style>
 
   <style id="v30-left-panel-usability">
-    /* V4.4 多圖快速導覽與批次進度 */
+    /* V4.6 多圖快速導覽與批次進度 */
     .batch-progress-text {
       margin-top: 7px;
       color: #334155;
@@ -1801,7 +1801,7 @@
       font-size: 12px;
     }
 
-    /* V4.4 左側操作面板可用性調整：獨立捲動 + 放大已選照片區 */
+    /* V4.6 左側操作面板可用性調整：獨立捲動 + 放大已選照片區 */
     @media (min-width: 981px) {
       .control-panel {
         position: sticky;
@@ -1892,7 +1892,7 @@
 
 
   <style>
-    /* V4.4：大量照片記憶體與團體照 AI 優化 */
+    /* V4.6：大量照片記憶體與團體照 AI 優化 */
     .canvas-parked-preview{display:block;max-width:100%;height:auto;border-radius:8px;object-fit:contain;background:#fff}.canvas-parked-preview[role="button"]{cursor:pointer;outline:none}.canvas-parked-preview[role="button"]:focus-visible{box-shadow:0 0 0 4px rgba(37,99,235,.24)}
     .canvas-memory-status{margin-top:7px;font-size:12px;font-weight:850;color:#475569}
     .canvas-memory-status[data-kind="active"]{color:#166534}
@@ -1904,10 +1904,10 @@
 <body>
   <main class="app-shell">
     <nav class="navbar">
-      <div class="brand" aria-label="mk_photo_mask V4.4 阿貴校長教育現場系列工具">
+      <div class="brand" aria-label="mk_photo_mask V4.6 阿貴校長教育現場系列工具">
         <img class="brand-logo" src="./icon.ico" alt="mk_photo_mask 圖示" />
         <span class="brand-text">
-          <a class="brand-home" href="./#" title="回到主頁面"><strong>mk_photo_mask V4.4</strong></a>
+          <a class="brand-home" href="./#" title="回到主頁面"><strong>mk_photo_mask V4.6</strong></a>
           <a class="brand-site" href="https://emaker.tw" target="_blank" rel="noopener noreferrer" title="另開視窗前往 emaker.tw"><em>阿貴校長教育現場系列工具</em></a>
         </span>
       </div>
@@ -1948,7 +1948,7 @@
 
         <div class="photo-summary">
           <div class="photo-summary-row">
-            <div><b>🖼️ 已選照片</b><br><span id="photoSummary">尚未加入照片</span></div>
+            <div><b>🖼️ 選取區</b><br><span id="photoSummary">尚未加入照片</span></div>
             <div class="photo-summary-actions">
               <button class="mini-btn add-photo-btn" id="addPhotosBtn" type="button">＋ 加入照片</button>
               <button class="mini-btn" id="clearPhotosBtn" type="button" disabled>清除全部</button>
@@ -2004,8 +2004,8 @@
           <div class="ai-quick-actions" aria-label="AI 人臉辨識操作">
             <button class="btn ai-btn workflow-primary" id="faceDetectBtn" type="button" disabled><span class="ai-btn-icon">🤖</span><span class="ai-btn-label">快速AI辨識</span></button>
             <button class="btn advanced-ai-btn workflow-primary" id="advancedRescanBtn" type="button" disabled><span class="ai-btn-icon">🔎</span><span class="ai-btn-label">進階AI辨識</span></button>
-            <div class="advanced-ai-state" id="advancedAiState" data-state="unknown">離線 AI：自動檢查中…｜dlib Lite：自動檢查中…</div>
-            <label class="ai-enhance-toggle"><input id="groupAiEnhanceEnabled" type="checkbox" checked> 團體照加強辨識（雙尺度／第二模型）</label>
+            <div class="advanced-ai-state" id="advancedAiState" data-state="unknown">離線 AI：首次辨識時載入｜dlib Lite：使用進階辨識時檢查</div>
+            <label class="ai-enhance-toggle"><input id="groupAiEnhanceEnabled" type="checkbox"> 團體照加強辨識（雙尺度／第二模型）</label>
             <div class="workflow-small-row ai-review-tools">
               <button id="selectAllFacesBtn" type="button" disabled>全選所有人臉</button>
               <button id="clearAllFacesBtn" type="button" disabled>全部取消</button>
@@ -2103,14 +2103,14 @@
           id="workspace"
           role="button"
           tabindex="0"
-          aria-label="按一下或拖曳照片到這裡，上傳要處理的檔案"
+          aria-label="點選本區域或直接拖曳到這裡"
         >
           <div class="empty-state" id="emptyState">
             <div>
               <div class="big-icon">🖼️</div>
               <h2>選擇要處理的照片</h2>
               <p class="workspace-upload-copy">
-                <strong>按一下此區域，或直接將照片拖曳到這裡</strong><br>
+                <strong>點選本區域或直接拖曳到這裡</strong><br>
                 可一次選擇單張或多張照片，支援 JPG、PNG、WEBP 格式。<br>
                 照片會留在本機處理，不會上傳到網路。
               </p>
@@ -2148,9 +2148,6 @@
   </main>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-  <script src="./mediapipe/face_detection.js"></script>
-  <script src="./libs/face-api.js"></script>
 
   <script>
     /* =========================================================
@@ -2269,9 +2266,9 @@
       aiAssetErrors: [],
       lastAiEngine: "",
       mainAiEnvironmentReady: null,
-      mainAiEnvironmentMessage: "離線 AI：自動檢查中…",
+      mainAiEnvironmentMessage: "離線 AI：首次辨識時載入",
       advancedAiStatusKind: "unknown",
-      advancedAiStatusMessage: "dlib Lite：自動檢查中…",
+      advancedAiStatusMessage: "dlib Lite：使用進階辨識時檢查",
       advancedHelperReady: false,
       advancedHelperVersion: "",
       advancedHelperError: "",
@@ -2281,7 +2278,7 @@
       applyInProgress: false,
       activePhotoItem: null,
       photoFilter: "all",
-      groupAiEnhance: true,
+      groupAiEnhance: false,
       canvasMemoryBusy: false,
       canvasMemoryParkedCount: 0,
       canvasHistoryTrimmedCount: 0,
@@ -2320,6 +2317,42 @@
     let toastTimer = null;
     let settingsSaveTimer = null;
     let imageInputMode = "replace";
+    const lazyScriptPromises = new Map();
+
+    // V4.6：AI 程式庫改為首次使用時才載入，避免啟動時解析 FaceAPI / MediaPipe 拖慢主畫面。
+    function loadClassicScriptOnce(key, src) {
+      if (lazyScriptPromises.has(key)) return lazyScriptPromises.get(key);
+      const promise = new Promise((resolve, reject) => {
+        const existing = document.querySelector(`script[data-lazy-ai="${key}"]`);
+        if (existing?.dataset.loaded === "1") { resolve(); return; }
+        const script = existing || document.createElement("script");
+        script.src = src;
+        script.async = true;
+        script.dataset.lazyAi = key;
+        script.onload = () => { script.dataset.loaded = "1"; resolve(); };
+        script.onerror = () => reject(new Error(`無法載入 ${src}`));
+        if (!existing) document.head.appendChild(script);
+      }).catch((error) => {
+        lazyScriptPromises.delete(key);
+        throw error;
+      });
+      lazyScriptPromises.set(key, promise);
+      return promise;
+    }
+
+    async function ensureLegacyMediaPipeLibrary() {
+      if (typeof window.FaceDetection === "function") return true;
+      await loadClassicScriptOnce("mediapipe-face-detection", "./mediapipe/face_detection.js");
+      if (typeof window.FaceDetection !== "function") throw new Error("MediaPipe face_detection.js 未正確載入");
+      return true;
+    }
+
+    async function ensureFaceApiLibrary() {
+      if (window.faceapi?.nets?.ssdMobilenetv1) return true;
+      await loadClassicScriptOnce("face-api", "./libs/face-api.js");
+      if (!window.faceapi?.nets?.ssdMobilenetv1) throw new Error("FaceAPI 備援程式庫未正確載入");
+      return true;
+    }
 
     function getUserSettingsSnapshot() {
       return {
@@ -2330,7 +2363,7 @@
         coverColor: coverColor.value,
         emoji: emojiSelect.value,
         facePadding: Number(facePadding.value),
-        groupAiEnhance: groupAiEnhanceEnabled ? !!groupAiEnhanceEnabled.checked : true
+        groupAiEnhance: groupAiEnhanceEnabled ? !!groupAiEnhanceEnabled.checked : false
       };
     }
 
@@ -2364,8 +2397,8 @@
       setRange(facePadding, facePaddingValue, saved.facePadding, "%");
       if (typeof saved.coverColor === "string" && /^#[0-9a-f]{6}$/i.test(saved.coverColor)) coverColor.value = saved.coverColor;
       if (typeof saved.emoji === "string" && [...emojiSelect.options].some((opt) => opt.value === saved.emoji)) emojiSelect.value = saved.emoji;
-      if (groupAiEnhanceEnabled) groupAiEnhanceEnabled.checked = saved.groupAiEnhance !== false;
-      state.groupAiEnhance = groupAiEnhanceEnabled ? !!groupAiEnhanceEnabled.checked : true;
+      if (groupAiEnhanceEnabled) groupAiEnhanceEnabled.checked = saved.groupAiEnhance === true;
+      state.groupAiEnhance = groupAiEnhanceEnabled ? !!groupAiEnhanceEnabled.checked : false;
 
       document.querySelectorAll(".shape-btn").forEach((button) => button.classList.toggle("active", button.dataset.shape === state.shape));
       document.querySelectorAll(".tool-card").forEach((card) => card.classList.toggle("active", card.dataset.tool === state.tool));
@@ -2382,7 +2415,7 @@
     }
 
     restoreUserSettings();
-    // V4.4：已移除工作專案與自動備份功能；啟動時清掉舊版留下的本機備份資料與設定旗標。
+    // V4.6：已移除工作專案與自動備份功能；啟動時清掉舊版留下的本機備份資料與設定旗標。
     try {
       localStorage.removeItem("mk_photo_mask_auto_backup_enabled");
       saveUserSettings();
@@ -2390,7 +2423,7 @@
     } catch (_) { }
     groupAiEnhanceEnabled?.addEventListener("change", () => { state.groupAiEnhance = !!groupAiEnhanceEnabled.checked; saveUserSettings(); });
 
-    /* V4.4 Hotfix: restored shared image/mask utilities accidentally removed during unified-apply refactor. */
+    /* V4.6 Hotfix: restored shared image/mask utilities accidentally removed during unified-apply refactor. */
     function safeBaseName(name) { return (name || "photo").replace(/\.[^.]+$/, "").replace(/[^\w\u4e00-\u9fff-]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60) || "photo"; }
     function canvasToBlob(canvas) { return new Promise((resolve, reject) => canvas.toBlob((blob) => blob ? resolve(blob) : reject(new Error("建立 PNG 失敗")), "image/png")); }
     function canvasToEncodedBlob(canvas, type = "image/png", quality = 0.96) {
@@ -3255,7 +3288,7 @@
       stickerStatus.textContent = "目前使用 Emoji 貼圖。";
       updateWorkspaceUploadState();
       const item = createPhotoItem(file, mainCanvas, overlayCanvas, true);
-      // V4.4 Hotfix 5：先建立並指定目前照片，再清理選取狀態，避免沿用舊 activePhotoItem 造成預覽狀態被誤清。
+      // V4.6 Hotfix 5：先建立並指定目前照片，再清理選取狀態，避免沿用舊 activePhotoItem 造成預覽狀態被誤清。
       item.originalImageData = null;
       item.parkedPreviewImg = mainParkedPreview;
       if (mainParkedPreview) mainParkedPreview.alt = file.name;
@@ -4134,8 +4167,12 @@ ${filename}${modifiedWarning}
 
     imageInput.addEventListener("change", async (event) => {
       const mode = imageInputMode; imageInputMode = "replace";
-      const files = event.target.files; event.target.value = "";
-      if (files?.length) await handleImageFiles(files, { append: mode === "append" });
+      // 先把 FileList 複製成獨立陣列，再清空 input。
+      // Chromium/Edge 的 FileList 可能是 live object；若先清空 input，files.length 會立即變成 0，
+      // 造成使用者已選照片卻完全沒有進入載入/預覽流程。
+      const files = Array.from(event.target.files || []);
+      event.target.value = "";
+      if (files.length) await handleImageFiles(files, { append: mode === "append" });
     });
     workspace.addEventListener("click", () => { if (!state.imageLoaded) { imageInputMode = "replace"; imageInput.click(); } });
     workspace.addEventListener("keydown", (event) => { if (state.imageLoaded || !["Enter", " "].includes(event.key)) return; event.preventDefault(); imageInputMode = "replace"; imageInput.click(); });
@@ -4711,7 +4748,7 @@ ${filename}${modifiedWarning}
     }
 
     /* =========================================================
-       AI 人臉辨識 v4.4：Native FaceDetector + MediaPipe 雙模型，FaceAPI 備援，支援形狀與效果切換
+       AI 人臉辨識 v4.6：Native FaceDetector + MediaPipe 雙模型，FaceAPI 備援，支援形狀與效果切換
        ========================================================= */
 
     const MEDIAPIPE_ASSET_PATH = "./mediapipe";
@@ -4876,7 +4913,7 @@ ${filename}${modifiedWarning}
       const isLocalHost = ["127.0.0.1", "localhost", "::1"].includes(location.hostname);
       const isHttp = location.protocol === "http:" || location.protocol === "https:";
       if (!isHttp || !isLocalHost) {
-        throw new Error("目前不是從本機 HTTP Server 啟動。請使用 start.bat 或 mk_photo_mask_v4.4.exe，網址應為 http://127.0.0.1:8765/ 類型，而不是直接雙擊 index.html。" );
+        throw new Error("目前不是從本機 HTTP Server 啟動。請使用 start.bat 或 mk_photo_mask_v4.6.exe，網址應為 http://127.0.0.1:8765/ 類型，而不是直接雙擊 index.html。" );
       }
     }
 
@@ -5022,6 +5059,7 @@ ${filename}${modifiedWarning}
       if (state.mediaPipeDetector) return state.mediaPipeDetector;
       if (state.mediaPipeInitPromise) return state.mediaPipeInitPromise;
       state.mediaPipeInitPromise = (async () => {
+        await ensureLegacyMediaPipeLibrary();
         if (typeof window.FaceDetection !== "function") throw new Error("MediaPipe face_detection.js 未正確載入");
         const detector = new window.FaceDetection({ locateFile: (file) => `${MEDIAPIPE_ASSET_PATH}/${file}` });
         detector.onResults((results) => {
@@ -5148,6 +5186,7 @@ ${filename}${modifiedWarning}
         state.faceApiBackend = "";
       }
       state.faceApiInitPromise = (async () => {
+        await ensureFaceApiLibrary();
         await selectFaceApiBackend();
         await window.faceapi.nets.ssdMobilenetv1.loadFromUri(FACE_API_MODEL_PATH);
         state.faceApiModel = window.faceapi.nets.ssdMobilenetv1;
@@ -5195,7 +5234,7 @@ ${filename}${modifiedWarning}
       } catch (error) { console.warn("團體照分區 Legacy MediaPipe 失敗。", error); }
       try { collected.push(...await detectFacesWithNativeApi(tileCanvas, 1, 1)); } catch (_) {}
 
-      // V4.4 第二模型補抓：只在精細小尺度 tile 使用 FaceAPI，避免大量照片在 CPU 模式下過慢。
+      // V4.6 第二模型補抓：只在精細小尺度 tile 使用 FaceAPI，避免大量照片在 CPU 模式下過慢。
       if (useSecondModel) {
         try {
           const faceApi = await detectFacesWithFaceApi(tileCanvas, 1, 1, GROUP_AI_FACEAPI_MIN_CONFIDENCE);
@@ -5266,7 +5305,7 @@ ${filename}${modifiedWarning}
       let tasksError = null;
       let mediaPipeError = null;
 
-      // V4.4：若已安裝最新 MediaPipe Tasks Vision，優先使用官方新版 API。
+      // V4.6：若已安裝最新 MediaPipe Tasks Vision，優先使用官方新版 API。
       try {
         if (!state.mediaPipeTasksChecked) await probeMediaPipeTasksAssets();
         if (state.mediaPipeTasksReady) {
@@ -5644,6 +5683,10 @@ ${filename}${modifiedWarning}
     async function detectAndMosaicAllFaces() {
       if (!state.photoItems.length || state.faceDetecting || state.multiProcessing) return;
       state.faceDetecting=true; state.faceReviewMode=false; beginCancellableOperation("快速AI辨識"); setFaceDetectLoading(true,"AI 正在辨識全部照片…");
+      if (state.mainAiEnvironmentReady === null) {
+        setMainAiEnvironmentState(null, "離線 AI：正在首次載入");
+        setAiStatus("loading", "首次載入離線 AI", "AI 元件採延遲載入，只在第一次按下辨識時啟動；之後可直接重複使用。" );
+      }
       setAiStatus("loading","AI 正在批次辨識",`準備掃描 ${state.photoItems.length} 張照片。既有手動框會保留。`); setBatchProgress(0, state.photoItems.length, "快速AI辨識");
       let totalFaces=0, ok=0;
       try{
@@ -5652,6 +5695,7 @@ ${filename}${modifiedWarning}
           const item=state.photoItems[i]; await ensurePhotoCanvasLoaded(item); drawManualSelectionsForItem(item); item.statusEl.textContent=`第 ${i+1} 張｜AI 辨識中…`;
           try{
             const det=await detectFacesOptimized(item.canvas);
+            if (state.mainAiEnvironmentReady !== true) setMainAiEnvironmentState(true, `離線 AI 已就緒｜${det.engine || "已載入"}`);
             item.faces=det.faces; item.engine=det.engine; item.selections=det.faces.map(f=>clampFaceBoxForCanvas(f,item.canvas)); item.selectedFaces=new Set(); item.activeAiFaceIndex=-1; item.aiSelectionsCustomized=false; item.aiPointer=null; item.detected=true;
             totalFaces+=item.selections.length; ok++;
             item.statusEl.textContent=`第 ${i+1} 張｜${item.file.name}`;
@@ -5678,8 +5722,8 @@ ${filename}${modifiedWarning}
     faceDetectBtn.addEventListener("click", detectAndMosaicAllFaces);
 
     function renderUnifiedAiEnvironmentState() {
-      const mainText = state.mainAiEnvironmentMessage || "離線 AI：自動檢查中…";
-      const helperText = state.advancedAiStatusMessage || "dlib Lite：自動檢查中…";
+      const mainText = state.mainAiEnvironmentMessage || "離線 AI：首次辨識時載入";
+      const helperText = state.advancedAiStatusMessage || "dlib Lite：使用進階辨識時檢查";
       let kind = state.advancedAiStatusKind || "unknown";
       if (state.mainAiEnvironmentReady === false) kind = "error";
       else if (kind === "unknown" && state.mainAiEnvironmentReady === true) kind = "ready";
@@ -5709,12 +5753,34 @@ ${filename}${modifiedWarning}
       }
     }
 
+    async function readAdvancedAiHealth() {
+      const response = await fetchWithTimeout(`${ADVANCED_AI_HELPER_URL}/health`, { method: "GET" }, 2500);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const info = await response.json();
+      if (!info || info.ok !== true) throw new Error(info?.error || "helper 回應格式不正確");
+      return info;
+    }
+
+    async function requestAdvancedAiStartup() {
+      const response = await fetchWithTimeout(`${location.origin}/start-advanced-ai`, { method: "GET" }, 12000);
+      const payload = await response.json().catch(() => null);
+      if (!response.ok || payload?.ok !== true) throw new Error(payload?.error || `HTTP ${response.status}`);
+      return true;
+    }
+
     async function checkAdvancedAiHelper({ quiet = false } = {}) {
       try {
-        const response = await fetchWithTimeout(`${ADVANCED_AI_HELPER_URL}/health`, { method: "GET" }, 2500);
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        const info = await response.json();
-        if (!info || info.ok !== true) throw new Error(info?.error || "helper 回應格式不正確");
+        let info;
+        try {
+          info = await readAdvancedAiHealth();
+        } catch (firstError) {
+          if (!quiet) {
+            setAdvancedAiState("busy", "dlib Lite：首次使用，正在啟動…");
+            setAiStatus("loading", "正在啟動進階 AI", "dlib Lite 改為按需啟動，因此不會拖慢主程式開啟速度。" );
+          }
+          await requestAdvancedAiStartup();
+          info = await readAdvancedAiHealth();
+        }
         state.advancedHelperReady = true;
         state.advancedHelperVersion = info.dlib_version || info.version || "unknown";
         state.advancedHelperError = "";
@@ -5725,7 +5791,7 @@ ${filename}${modifiedWarning}
         state.advancedHelperError = readableError(error);
         setAdvancedAiState("missing", "dlib Lite 未啟動｜主要 MediaPipe / FaceAPI 不受影響");
         if (!quiet) {
-          setAiStatus("error", "進階 AI dlib Lite 尚未啟動", `請先執行 advanced-ai-helper\\prepare-bundled-runtime.cmd，或將 advanced_ai_helper.exe 放入程式資料夾後重新啟動。錯誤：${state.advancedHelperError}`);
+          setAiStatus("error", "進階 AI dlib Lite 尚未啟動", `若尚未準備 bundled runtime，請執行 advanced-ai-helper\prepare-bundled-runtime.cmd；也可放置 advanced_ai_helper.exe。錯誤：${state.advancedHelperError}`);
           showToast("進階 AI dlib Lite 尚未啟動");
         }
         return false;
@@ -6092,7 +6158,7 @@ ${filename}${modifiedWarning}
       const end=new Blob([u32(0x06054b50),u16(0),u16(0),u16(entries.length),u16(entries.length),u32(centralSize),u32(offset),u16(0)]);
       return new Blob([...localParts,...centrals,end],{type:"application/zip"});
     }
-    // V4.4：工作專案、載入工作與所有本機備份機制已完整移除。
+    // V4.6：工作專案、載入工作與所有本機備份機制已完整移除。
     downloadAllZipBtn.addEventListener("click", async () => {
       if (!state.photoItems.length) return;
       state.multiProcessing = true;
@@ -6362,19 +6428,11 @@ ${filename}${modifiedWarning}
       }
     });
 
-    // 啟動後直接自動檢查主要離線 AI 與 dlib Lite，結果合併顯示在上方狀態欄。
+    // V4.6：啟動時不再自動載入 AI 模型、WASM 或連線檢查 dlib helper。
+    // 主畫面先立即可操作；快速 AI / 進階 AI 於使用者第一次按下時才個別初始化。
     window.addEventListener("load", () => {
-      setTimeout(async () => {
-        try {
-          renderUnifiedAiEnvironmentState();
-          await checkOfflineAi();
-          await checkAdvancedAiHelper({ quiet: true });
-          renderUnifiedAiEnvironmentState();
-        } catch (error) {
-          setMainAiEnvironmentState(false, `離線 AI 自動檢查失敗｜${readableError(error)}`);
-          setAiStatus("error", "啟動 AI 自我檢查失敗", readableError(error));
-        }
-      }, 250);
+      renderUnifiedAiEnvironmentState();
+      setAiStatus("idle", "AI 已待命", "為縮短啟動時間，AI 元件會在第一次按下「快速AI辨識」或「進階AI辨識」時才載入。" );
     });
   </script>
 </body>

@@ -1,6 +1,6 @@
 param(
     [string]$Directory = '.\release-verify',
-    [string]$ExeName = 'mk_photo_mask_v4.3.exe',
+    [string]$ExeName = 'mk_photo_mask_v4.6.exe',
     [switch]$RequireValidSignature,
     [switch]$RequireTimestamp
 )

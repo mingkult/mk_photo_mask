@@ -1,5 +1,5 @@
 $ErrorActionPreference = "Stop"
-$Host.UI.RawUI.WindowTitle = "照片隱私遮蔽工具｜AI 完全離線單檔版 v4.4"
+$Host.UI.RawUI.WindowTitle = "照片隱私遮蔽工具｜AI 完全離線單檔版 v4.6"
 
 $Root = [System.IO.Path]::GetFullPath((Split-Path -Parent $MyInvocation.MyCommand.Path))
 $RootPrefix = $Root.TrimEnd([System.IO.Path]::DirectorySeparatorChar) + [System.IO.Path]::DirectorySeparatorChar
@@ -171,20 +171,23 @@ function Start-AdvancedHelperFromRuntime {
     return $false
 }
 
-# V4.4 optional dlib Lite helper. Prefer bundled runtime, then helper EXE.
-if (-not (Test-AdvancedHelper)) {
+# V4.6：不要在主程式啟動時啟動 dlib Lite。
+# 只有使用者第一次按「進階AI辨識」時，瀏覽器才會呼叫 /start-advanced-ai 要求本機服務啟動 helper。
+function Ensure-AdvancedHelper {
+    if (Test-AdvancedHelper) { return $true }
     $Started = $false
     if ([System.IO.Directory]::Exists($AdvancedRuntimeDir)) { $Started = Start-AdvancedHelperFromRuntime }
     if (-not $Started) { $Started = Start-AdvancedHelperFromExe }
+    return $Started
 }
 
 Clear-Host
 Write-Host "================================================" -ForegroundColor Cyan
-Write-Host " 照片隱私遮蔽工具｜AI 完全離線單檔版 v4.4" -ForegroundColor White
+Write-Host " 照片隱私遮蔽工具｜AI 完全離線單檔版 v4.6" -ForegroundColor White
 Write-Host "================================================" -ForegroundColor Cyan
 Write-Host ""
 Write-Host "本機服務已啟動：$Url" -ForegroundColor Green
-Write-Host "v4.4 優先使用 MediaPipe Tasks Vision 1.0.1（若已安裝），並保留 Legacy MediaPipe 與 FaceAPI 備援。"
+Write-Host "v4.6 採 AI 延遲載入：開啟主畫面時不初始化模型，首次辨識時才載入 MediaPipe / FaceAPI。"
 Write-Host "請保留此黑色視窗；關閉後服務立即停止。" -ForegroundColor Yellow
 Write-Host ""
 
@@ -210,6 +213,15 @@ try {
             $RawTarget = $Parts[1].Split('?')[0]
             if ($RawTarget -eq "/health") {
                 Send-Response $Stream 200 "OK" ([System.Text.Encoding]::UTF8.GetBytes("OK")) "text/plain; charset=utf-8" ($Method -eq "HEAD")
+                continue
+            }
+
+            if ($RawTarget -eq "/start-advanced-ai") {
+                $Ready = Ensure-AdvancedHelper
+                $Json = if ($Ready) { '{"ok":true}' } else { '{"ok":false,"error":"dlib Lite runtime/helper not available"}' }
+                $StatusCode = if ($Ready) { 200 } else { 503 }
+                $StatusText = if ($Ready) { "OK" } else { "Service Unavailable" }
+                Send-Response $Stream $StatusCode $StatusText ([System.Text.Encoding]::UTF8.GetBytes($Json)) "application/json; charset=utf-8" ($Method -eq "HEAD")
                 continue
             }
 

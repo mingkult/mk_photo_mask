@@ -19,8 +19,8 @@ jobs:
   build:
     runs-on: windows-latest
     env:
-      APP_VERSION: '4.4'
-      EXE_NAME: 'mk_photo_mask_v4.4.exe'
+      APP_VERSION: '4.6'
+      EXE_NAME: 'mk_photo_mask_v4.6.exe'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -96,10 +96,10 @@ jobs:
       - name: Upload workflow artifact
         uses: actions/upload-artifact@v4
         with:
-          name: mk_photo_mask_v4.4_windows
+          name: mk_photo_mask_v4.6_windows
           path: |
-            output/mk_photo_mask_v4.4.exe
-            output/mk_photo_mask_v4.4.exe.sha256
+            output/mk_photo_mask_v4.6.exe
+            output/mk_photo_mask_v4.6.exe.sha256
           if-no-files-found: error
 
       - name: Create GitHub Release and upload signed assets
@@ -111,7 +111,7 @@ jobs:
           $tag = $env:GITHUB_REF_NAME
           $exe = ".\output\$env:EXE_NAME"
           $sha = "$exe.sha256"
-          $notes = '.\V4.4_RELEASE_NOTES.txt'
+          $notes = '.\V4.6_RELEASE_NOTES.txt'
 
           gh release view $tag *> $null
           if ($LASTEXITCODE -eq 0) {
